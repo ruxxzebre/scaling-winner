@@ -1,0 +1,32 @@
+<effect force_synch="false">
+    <atom name="light" min_size="1" max_size="1" lifetime="0.15" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="1" fade_out_start="50" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomaspectsize size="12.5 12.5" min="1" max="2"/>
+            <constantage age="99999"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="keys" teleport_cap="1" current_position="true" channel="world" normal_variation="0" teleport_event="false" positioner="box">
+                <lifetime_keys loop="false">
+                    <key t="0" v="0.10000000149012"/>
+                </lifetime_keys>
+                <box min="-5 -5 0" max="5 5 10" min_normal="0 0 0" max_normal="0 0 0"/>
+                <normal min_velocity="1" max_velocity="10"/>
+            </teleporter>
+            <constantacceleration relative="world" acceleration="-0 0 450"/>
+        </simulatorstack>
+        <visualizerstack>
+            <light per_particle_age="false" shadow_caster="true" specular="false" color_input="constant" color="202.00001525879 95 15.000000953674" multiplier_input="keys" far_range_input="constant" far_range="150">
+                <multiplier_keys loop="true">
+                    <key t="0" v="0.00040000001899898"/>
+                    <key t="0.080645158886909" v="0.003000000026077"/>
+                    <key t="0.24193547666073" v="0"/>
+                    <key t="0.39081886410713" v="0.0049999998882413"/>
+                </multiplier_keys>
+            </light>
+        </visualizerstack>
+    </atom>
+</effect>

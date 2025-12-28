@@ -1,0 +1,8 @@
+{
+    "name" : "Any Day Any Heist",
+    "description" : "Adds Random Heist Generator and Day Selects",
+    "author" : "Hacker_lyx",
+    "version" : "0.43",
+	"image" : "icon.png",
+	"blt_version" : 3
+}

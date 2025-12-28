@@ -1,0 +1,13 @@
+{
+	"name" : "Endscreen XP List",
+	"description" : "",
+	"author" : "zReko\n  Nexqua - Original idea",
+	"contact" : "",
+	"blt_version" : 2,
+	"color" : "0.043 0.808 0.6",
+	"priority" : "-50",
+	"version" : "1",
+	"hooks" : [
+		{"hook_id":"lib/managers/hud/hudstageendscreen","script_path":"hudstageendscreen.lua"}
+	]
+}

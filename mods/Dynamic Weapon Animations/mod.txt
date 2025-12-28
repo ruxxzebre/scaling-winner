@@ -1,0 +1,20 @@
+{
+	"name": "Dynamic Weapon Animations",
+	"description": "Brings viewmodel animations up to modern standards.",
+	"author": "Orignal mod by return & modified by Roko",
+	"version": "1",
+	"hooks": [
+        {
+			"hook_id": "lib/units/cameras/fpcameraplayerbase",
+			"script_path": "hooks/fpcameraplayerbase.lua"
+		},
+        {
+			"hook_id": "lib/units/beings/player/playercamera",
+			"script_path": "hooks/playercamera.lua"
+		},
+		{ 	
+			"hook_id" : "lib/tweak_data/tweakdata", 
+			"script_path" : "lua/lib/tweak_data/tweakdata.lua" 
+		}
+	]
+}

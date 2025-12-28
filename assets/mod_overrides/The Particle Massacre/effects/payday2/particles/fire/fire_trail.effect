@@ -1,0 +1,60 @@
+<effect force_synch="false">
+    <atom name="heat" min_size="1" max_size="1" lifetime="1.5" random_start_time="false" start_time="0.3" preroll="3" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="-100 -100 60" max="100 100 61"/>
+            <boxrandomvelocity relative="effect" min="-100 -100 -100" max="100 100 100"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomanglevelocity min="-0.2" max="0.2"/>
+            <constantage age="99999"/>
+            <boxrandomaspectsize size="150 150" min="1.2" max="1.6"/>
+        </initializerstack>
+        <simulatorstack>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="4" teleport_cap="1" current_position="true" channel="world" normal_variation="0.18999999761581" teleport_event="false" positioner="box">
+                <box min="0 0 0" max="0 0 0" min_normal="0 1 1" max_normal="0 1 1"/>
+                <normal min_velocity="80" max_velocity="85"/>
+            </teleporter>
+            <scaledvelocityintegrator channel="world" per_particle_age="true">
+                <scale_keys loop="false">
+                    <key t="0.0032948928419501" v="0"/>
+                    <key t="0.35864296555519" v="1"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <ager/>
+            <constantacceleration relative="world" acceleration="0 0 -10"/>
+            <anglevelocityintegrator/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_dist_heat" intensity="" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="heat_shimmer" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.60000002384186 0.60000002384186"/>
+                    <key t="2.4534687995911" v="1.5 1.5"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.30456852912905" v="85"/>
+                    <key t="1.9966160058975" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+	<atom name="cloud2" min_size="1" max_size="1" lifetime="1.5" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="2" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <effect_spawn event="tick" effect="effects/payday2/particles/explosions/burnpuff"/>
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomaspectsize size="10 10" min="0.4" max="2"/>
+            <constantage age="99999"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <teleporter name="" trigger_teleport="distance" teleport_dist="5" teleport_cap="1" current_position="false" channel="world" normal_variation="0" teleport_event="false" positioner="circle">
+                <circle radius="0" on_edge="false"/>
+                <normal min_velocity="0" max_velocity="0"/>
+            </teleporter>
+            <eventtick frequency="10" jitter="0" use_velocity="false" use_rotation="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="core/textures/default_texture_df" intensity="none" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="100 100" color_input="constant" color="255 255 255" opacity_input="constant" opacity="0" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0"/>
+        </visualizerstack>
+    </atom>
+</effect>

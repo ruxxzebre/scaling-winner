@@ -1,0 +1,25 @@
+<effect force_synch="false">
+	<atom name="light" min_size="1" max_size="1" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <effect_spawn event="teleport" effect="effects/particles/environment/sparks_world_col"/>
+        <initializerstack>
+            <localboxrandomposition min="-1 -1 -1" max="1 1 1"/>
+            <boxrandomage min="0" max="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <worldtransform transform_rotations="false"/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="4" teleport_cap="1" current_position="true" channel="world" normal_variation="0.34000000357628" teleport_event="true" positioner="circle">
+                <circle radius="1" on_edge="false"/>
+                <normal min_velocity="0" max_velocity="0"/>
+            </teleporter>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <light per_particle_age="true" shadow_caster="false" specular="true" color_input="constant" color="202.00001525879 95 15.000000953674" multiplier_input="constant" multiplier="0.01" far_range_input="keys">
+                <far_range_keys loop="false">
+                    <key t="0" v="300"/>
+                    <key t="0.2141680419445" v="0"/>
+                </far_range_keys>
+            </light>
+        </visualizerstack>
+    </atom>
+</effect>

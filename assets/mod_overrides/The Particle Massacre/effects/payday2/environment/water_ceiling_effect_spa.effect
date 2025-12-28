@@ -1,0 +1,115 @@
+<effect force_synch="false">
+    <atom name="driplets_near" min_size="20" max_size="30" lifetime="-1" random_start_time="false" start_time="0" preroll="3" inherit_velocity_multiplier="0" fade_in_start="-1" fade_in_length="0" fade_out_start="20" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="1" max_particle_radius="1" soundbank="" cue="" ambient="false" grab_relative="world" grab_pos="0 0 -100" grab_radius="400" grab_backfacing="false" timeline="">
+        <effect_spawn event="collision" effect="effects/payday2/environment/parts/water_ripple"/>
+        <initializerstack>
+            <boxrandomposition relative="effect" min="-1 -1 -1" max="1 1 1"/>
+            <boxrandomvelocity relative="effect" min="-100 -100 -100" max="100 100 100"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="0" max="0"/>
+            <boxrandomaspectsize size="2 3" min="3" max="3.5"/>
+            <boxrandomuvoffset uv_size="0.0625 0.0625" frame_start="0 0.9375" primary_step_direction="+y" secondary_step_direction="+x" num_frames="8"/>
+        </initializerstack>
+        <simulatorstack>
+            <teleporter name="" trigger_teleport="frequency" frequency_input="keys" min_age="1" teleport_cap="1" current_position="true" channel="world" normal_variation="0.36000001430511" teleport_event="true" positioner="box">
+                <frequency_keys loop="true">
+                    <key t="0.18987341225147" v="1"/>
+                    <key t="0.36286920309067" v="0"/>
+                    <key t="0.60337555408478" v="3"/>
+                    <key t="1.1518987417221" v="1"/>
+                </frequency_keys>
+                <box min="-20 -10 -10" max="20 10 -10" min_normal="0 0 0" max_normal="0 0 0"/>
+                <normal min_velocity="0 " max_velocity="0 "/>
+            </teleporter>
+            <ager/>
+            <constantacceleration relative="world" acceleration="0 0 -982"/>
+            <scaledvelocityintegrator channel="world" per_particle_age="true">
+                <scale_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.22432112693787" v="0"/>
+                    <key t="1.0219178199768" v="1"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <particleworldcollision radius="2" elasticity="0.08"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/liquid/water_dripplets_df" intensity="dimlight" billboard_type="axialz_locked" rotation_channel="world_rotation" blend_mode="normal" render_template="heat_shimmer" origo="0.5 0.2" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8" fps="28" loop="false">
+                <size_scale_keys loop="false">
+                    <key t="0" v="2 1"/>
+                    <key t="0.66092944145203" v="1.5 3"/>
+                    <key t="1.600688457489" v="0 0"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="1.5994358062745" v="175"/>
+                    <key t="1.6446174383165" v="0"/>
+                </opacity_keys>
+            </billboard>
+			<billboard texture="effects/textures/liquid/water_dripplets_df" intensity="dimlight" billboard_type="axialz_locked" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.2" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="46 73 73" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8" fps="28" loop="false">
+                <size_scale_keys loop="false">
+                    <key t="0" v="2 1"/>
+                    <key t="0.66092944145203" v="1.5 3"/>
+                    <key t="1.600688457489" v="0 0"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="1.5994358062745" v="105"/>
+                    <key t="1.6446174383165" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="driplets_far" min_size="20" max_size="30" lifetime="-1" random_start_time="false" start_time="0" preroll="3" inherit_velocity_multiplier="1" fade_in_start="20" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 -100" grab_radius="400" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="-1 -1 -1" max="1 1 1"/>
+            <boxrandomvelocity relative="effect" min="-100 -100 -100" max="100 100 100"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="-3.14" max="3.14"/>
+            <boxrandomaspectsize size="2 3" min="5" max="6"/>
+            <boxrandomuvoffset uv_size="0.0625 0.0625" frame_start="0 0.9375" primary_step_direction="+y" secondary_step_direction="+x" num_frames="8"/>
+        </initializerstack>
+        <simulatorstack>
+            <teleporter name="" trigger_teleport="frequency" frequency_input="keys" min_age="1" teleport_cap="1" current_position="true" channel="world" normal_variation="0.36000001430511" teleport_event="true" positioner="box">
+                <frequency_keys loop="true">
+                    <key t="0.099173553287983" v="2"/>
+                    <key t="0.1790633648634" v="0"/>
+                    <key t="0.29476583003998" v="0"/>
+                    <key t="1.1542699337006" v="2"/>
+                </frequency_keys>
+                <box min="-20 -10 -10" max="20 10 -10" min_normal="0 0 0" max_normal="0 0 0"/>
+                <normal min_velocity="0 " max_velocity="0 "/>
+            </teleporter>
+            <ager/>
+            <particleworldcollision radius="2" elasticity="0.059999998658895"/>
+            <constantacceleration relative="world" acceleration="0 0 -982"/>
+            <scaledvelocityintegrator channel="world" per_particle_age="true">
+                <scale_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.22432112693787" v="0"/>
+                    <key t="0.23376622796059" v="1"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/liquid/water_dripplets_df" intensity="dimlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="heat_shimmer" origo="0.5 0.2" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8" fps="30" loop="false">
+                <size_scale_keys loop="false">
+                    <key t="0" v="2 1"/>
+                    <key t="0.66092944145203" v="1.5 3"/>
+                    <key t="1.600688457489" v="0 0"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="1.6446174383165" v="255"/>
+                    <key t="1.6446174383165" v="0"/>
+                </opacity_keys>
+            </billboard>
+			<billboard texture="effects/textures/liquid/water_dripplets_df" intensity="dimlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op" origo="0.5 0.2" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="68 111.00000762939 111.00000762939" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8" fps="30" loop="false">
+                <size_scale_keys loop="false">
+                    <key t="0" v="2 1"/>
+                    <key t="0.66092944145203" v="1.5 3"/>
+                    <key t="1.600688457489" v="0 0"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="1.6446174383165" v="175"/>
+                    <key t="1.6446174383165" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

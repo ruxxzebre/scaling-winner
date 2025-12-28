@@ -1,0 +1,55 @@
+<effect force_synch="false">
+    <atom name="spawner" min_size="1" max_size="1" lifetime="0.25" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <effect_spawn event="tick" effect="effects/particles/environment/wide_sparks_col_rev_x"/>
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0.10000000149012 0.10000000149012 0.10000000149012"/>
+            <boxrandomvelocity relative="effect" min="0 -115 0" max="0 -115 0"/>
+        </initializerstack>
+        <simulatorstack>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0" v="0"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <eventtick frequency="28" jitter="0" use_velocity="false" use_rotation="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <light per_particle_age="false" shadow_caster="false" specular="true" color_input="constant" color="134 109.00000762939 45" multiplier_input="constant" multiplier="0.01" far_range_input="keys">
+                <far_range_keys loop="true">
+                    <key t="0" v="400"/>
+                    <key t="0.079077430069447" v="100"/>
+                    <key t="0.17792421579361" v="400"/>
+                </far_range_keys>
+            </light>
+        </visualizerstack>
+    </atom>
+    <atom name="timer" min_size="1" max_size="1" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="-1 -1 -1" max="1 1 1"/>
+        </initializerstack>
+        <simulatorstack>
+            <worldtransform transform_rotations="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="core/textures/default_texture_df" intensity="" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="100 100" color_input="constant" color="255 255 255" opacity_input="constant" opacity="0" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0"/>
+        </visualizerstack>
+    </atom>
+    <atom name="spawnersmoke" min_size="1" max_size="1" lifetime="1.25" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <effect_spawn event="tick" effect="effects/particles/environment/slghtr_ambush_puffspawn_rev_x"/>
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0.10000000149012 0.10000000149012 0.10000000149012"/>
+            <boxrandomvelocity relative="effect" min="0 -55 0" max="0 -55 0"/>
+        </initializerstack>
+        <simulatorstack>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0" v="0"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <eventtick frequency="7" jitter="1" use_velocity="false" use_rotation="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/opacity_atlas_df" intensity="" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="100 100" color_input="constant" color="255 255 255" opacity_input="constant" opacity="0" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0"/>
+        </visualizerstack>
+    </atom>
+</effect>

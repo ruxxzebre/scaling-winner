@@ -1,0 +1,68 @@
+<effect force_synch="false">
+    <atom name="Sparks - Gravity" min_size="15" max_size="15" lifetime="-1" random_start_time="true" min_start_time="0.1" max_start_time="0.2" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="-30 -30 -100" max="100 100 100"/>
+            <boxrandomaspectsize size="0.5 8" min="1" max="2.5"/>
+            <boxrandomrotation relative="effect" min="0 0 0" max="0 0 0" min_rot="0" max_rot="0"/>
+            <boxrandomanglevelocity min="0" max="360"/>
+            <boxrandomangle min="0" max="0"/>
+            <constantage age="99999"/>
+        </initializerstack>
+        <simulatorstack>
+            <constantacceleration relative="world" acceleration="0 0 -800"/>
+            <rotationbyvelocity velocity="360"/>
+            <velocityintegrator channel="world"/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="1" teleport_cap="1" current_position="true" channel="world" normal_variation="0" teleport_event="false" positioner="circle">
+                <circle radius="30" on_edge="false"/>
+                <normal min_velocity="0" max_velocity="100"/>
+                <random_rotation min="-10 -10 1" max="10 10 1" min_rot="5" max_rot="25"/>
+            </teleporter>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="sun" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.1" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="11 73 136" opacity_input="constant" opacity="255" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.0625 0.0625" uv_offset_input="constant" uv_offset="0 0.9315">
+                <size_scale_keys loop="false">
+                    <key t="0.027538726106286" v="1 1"/>
+                    <key t="1.1015490293503" v="0.20000000298023 0.20000000298023"/>
+                    <key t="2" v="0 0"/>
+                </size_scale_keys>
+            </billboard>
+            <billboard texture="effects/textures/add_atlas_df" intensity="match" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="add_no_alpha" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="40 40" color_input="constant" color="75 135 165" opacity_input="constant" opacity="15" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.125 0.03125" uv_offset_input="constant" uv_offset="0.75 0.125"/>
+		</visualizerstack>
+    </atom>
+    <atom name="Sparks - Straight" min_size="15" max_size="15" lifetime="-1" random_start_time="true" min_start_time="0.3" max_start_time="0.5" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="-100 -100 -100" max="30 100 100"/>
+            <boxrandomaspectsize size="0.5 5" min="1" max="2.5"/>
+            <boxrandomrotation relative="effect" min="0 0 0" max="0 0 0" min_rot="0" max_rot="0"/>
+            <boxrandomanglevelocity min="180" max="-180"/>
+            <boxrandomangle min="0" max="0"/>
+            <constantage age="99999"/>
+        </initializerstack>
+        <simulatorstack>
+            <rotationbyvelocity velocity="9999"/>
+            <constantacceleration relative="world" acceleration="0 0 -902"/>
+            <velocityintegrator channel="world"/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="1" teleport_cap="1" current_position="true" channel="world" normal_variation="0" teleport_event="false" positioner="box">
+                <box min="-10 -10 -20" max="10 10 0" min_normal="0 1 0" max_normal="0 1 0"/>
+                <normal min_velocity="2" max_velocity="10"/>
+            </teleporter>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="sun" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.1" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.0625 0.0625" uv_offset_input="constant" uv_offset="0 0.9315">
+                <size_scale_keys loop="true">
+                    <key t="0.027538726106286" v="1 1"/>
+                    <key t="2.3407917022705" v="0.20000000298023 0.20000000298023"/>
+                    <key t="4.3201379776001" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="36 80 134"/>
+                </color_keys>
+            </billboard>
+            <billboard texture="effects/textures/add_atlas_df" intensity="match" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="add_no_alpha" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="30 30" color_input="constant" color="10 35 165" opacity_input="constant" opacity="15" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.125 0.03125" uv_offset_input="constant" uv_offset="0.75 0.125"/>
+		</visualizerstack>
+    </atom>
+</effect>

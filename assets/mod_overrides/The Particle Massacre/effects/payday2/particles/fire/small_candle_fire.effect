@@ -1,0 +1,42 @@
+<effect force_synch="false">
+    <atom name="flames_halftime" min_size="4" max_size="7" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="10" fade_out_start="200" spawn_cull_policy="initialize" cull_policy="update_render" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomaspectsize size="2 2" min="1" max="1.25"/>
+            <constantage age="9999999"/>
+            <boxrandomangle min="-0.02" max="0.02"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <teleporter name="fire_teleport" trigger_teleport="time" lifetime_input="constant" particle_lifetime="3" teleport_cap="3" current_position="false" channel="world" normal_variation="0.49" teleport_event="true" positioner="circle">
+                <circle radius="0" on_edge="true"/>
+                <normal min_velocity="0.15" max_velocity="0.20"/>
+            </teleporter>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/fire/sfm_candleflame_4x8_df" intensity="sun" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 1" per_particle_age="true" size_input="keys" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 0" uv_size="0.125 0.25" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="32" fps="30" loop="false">
+                <size_keys loop="true">
+                    <key t="0" v="3 3"/>
+                    <key t="0.66265100240707" v="3.7999999523163 3"/>
+                    <key t="0.88812392950058" v="3.0999999046326 5"/>
+                    <key t="1.9965577125549" v="2 2"/>
+                </size_keys>
+                <color_keys loop="false">
+                    <key t="0" v="62 113 249"/>
+                    <key t="0.18244406580925" v="223 207 11"/>
+                    <key t="0.3717727959156" v="240 216 74"/>
+                    <key t="0.8191881775856" v="0 0 0"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.06540447473526" v="255"/>
+                    <key t="1.5215146541595" v="255"/>
+                    <key t="2" v="0"/>
+                </opacity_keys>
+            </billboard>
+			<billboard texture="effects/textures/add_atlas_df" intensity="match" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="add_no_alpha" render_template="effect_geometry_fade_out_add" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="75 75" color_input="constant" color="255 135 65" opacity_input="constant" opacity="15" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.125 0.03125" uv_offset_input="constant" uv_offset="0.75 0.125"/>
+        </visualizerstack>
+    </atom>
+</effect>

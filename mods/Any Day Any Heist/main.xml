@@ -1,0 +1,3919 @@
+<mod name="AnyDayAnyHeist" color="Color(1.00,0.52,0.10)" core_class="classes/AnyDayAnyHeist.lua" global_key="AnyDayAnyHeist">
+	<AssetUpdates id="43232" version="0.43" provider="modworkshop"/>
+	<Localization directory="loc" default="english.txt">
+		<loc file="english.txt" language="english"/>
+		<loc file="schinese.txt" language="schinese"/>
+		<loc file="russian.txt" language="russian"/>
+		<loc file="french.txt" language="french"/>
+	</Localization>
+	
+	<!-- Day select contact -->
+	<contact assets_gui="guis/mission_briefing/preload_contact_bain" desc_id="dayselect_id" id="dayselect" name_id="dayselect_name" hidden="true" package="packages/contact_bain"/>
+	<contact assets_gui="guis/mission_briefing/preload_contact_bain" desc_id="escapes_id" id="escapes" name_id="escapes_name" hidden="true" package="packages/contact_bain"/>
+	<contact assets_gui="guis/mission_briefing/preload_contact_bain" desc_id="randoms_id" id="randoms" name_id="randoms_name" hidden="true" package="packages/contact_bain"/>
+	<contact assets_gui="guis/mission_briefing/preload_contact_bain" desc_id="random_pros_id" id="random_pros" name_id="random_pros_name" hidden="true" package="packages/contact_bain"/>
+	<contact assets_gui="guis/mission_briefing/preload_contact_bain" desc_id="random_stealth_id" id="random_stealth" name_id="random_stealth_name" hidden="true" package="packages/contact_bain"/>
+	<contact assets_gui="guis/mission_briefing/preload_contact_bain" desc_id="random_stealth_pros_id" id="random_stealth_pros" name_id="random_stealth_pros_name" hidden="true" package="packages/contact_bain"/>
+	
+	<!-- Randoms -->
+	<!-- 1 Day -->
+	<narrative id="dayselect_random_s_1" name_id="heist_dayselect_random_1_name" brief_id="heist_dayselect_random_s_1_crimenet" contact="randoms" icon="icons/NormalIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="32725"/>
+			<value_node value="60052"/>
+			<value_node value="130139"/>
+			<value_node value="246204"/>
+			<value_node value="319067"/>
+			<value_node value="322243"/>
+			<value_node value="324383"/>
+		</payout>
+	</narrative>
+	<!-- 2 Day -->
+	<narrative id="dayselect_random_s_2" name_id="heist_dayselect_random_2_name" brief_id="heist_dayselect_random_s_2_crimenet" contact="randoms" icon="icons/HardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="65450"/>
+			<value_node value="120104"/>
+			<value_node value="260278"/>
+			<value_node value="492408"/>
+			<value_node value="638134"/>
+			<value_node value="644486"/>
+			<value_node value="648766"/>
+		</payout>
+	</narrative>
+	<!-- 3 Day -->
+	<narrative id="dayselect_random_s_3" name_id="heist_dayselect_random_3_name" brief_id="heist_dayselect_random_s_3_crimenet" contact="randoms" icon="icons/VeryHardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="98175"/>
+			<value_node value="180156"/>
+			<value_node value="390417"/>
+			<value_node value="738612"/>
+			<value_node value="957201"/>
+			<value_node value="966729"/>
+			<value_node value="973149"/>
+		</payout>
+	</narrative>
+	<!-- 4 Day -->
+	<narrative id="dayselect_random_s_4" name_id="heist_dayselect_random_4_name" brief_id="heist_dayselect_random_s_4_crimenet" contact="randoms" icon="icons/OverkillIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="130900"/>
+			<value_node value="240208"/>
+			<value_node value="520556"/>
+			<value_node value="984816"/>
+			<value_node value="1276268"/>
+			<value_node value="1288972"/>
+			<value_node value="1297532"/>
+		</payout>
+	</narrative>
+	<!-- 5 Day -->
+	<narrative id="dayselect_random_s_5" name_id="heist_dayselect_random_5_name" brief_id="heist_dayselect_random_s_5_crimenet" contact="randoms" icon="icons/MayhemIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="163625"/>
+			<value_node value="300260"/>
+			<value_node value="650695"/>
+			<value_node value="1231020"/>
+			<value_node value="1595335"/>
+			<value_node value="1611215"/>
+			<value_node value="1621915"/>
+		</payout>
+	</narrative>
+	<!-- 6 Day -->
+	<narrative id="dayselect_random_s_6" name_id="heist_dayselect_random_6_name" brief_id="heist_dayselect_random_s_6_crimenet" contact="randoms" icon="icons/DeathWishIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="196350"/>
+			<value_node value="360312"/>
+			<value_node value="780834"/>
+			<value_node value="1477224"/>
+			<value_node value="1914402"/>
+			<value_node value="1933458"/>
+			<value_node value="1946298"/>
+		</payout>
+	</narrative>
+	<!-- 7 Day -->
+	<narrative id="dayselect_random_s_7" name_id="heist_dayselect_random_7_name" brief_id="heist_dayselect_random_s_7_crimenet" contact="randoms" icon="icons/DeathSentenceIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="229075"/>
+			<value_node value="420364"/>
+			<value_node value="910973"/>
+			<value_node value="1723428"/>
+			<value_node value="2233469"/>
+			<value_node value="2255701"/>
+			<value_node value="2270681"/>
+		</payout>
+	</narrative>
+	
+	<!-- Professional -->
+	<!-- 1 day pro -->
+	<narrative id="dayselect_random_p_1" name_id="heist_dayselect_random_1_name" brief_id="heist_dayselect_random_p_1_crimenet" contact="random_pros" icon="icons/HardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="32725"/>
+			<value_node value="60052"/>
+			<value_node value="130139"/>
+			<value_node value="246204"/>
+			<value_node value="319067"/>
+			<value_node value="322243"/>
+			<value_node value="324383"/>
+		</payout>
+	</narrative>
+	<!-- 2 Day pro -->
+	<narrative id="dayselect_random_p_2" name_id="heist_dayselect_random_2_name" brief_id="heist_dayselect_random_p_2_crimenet" contact="random_pros" icon="icons/VeryHardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="65450"/>
+			<value_node value="120104"/>
+			<value_node value="260278"/>
+			<value_node value="492408"/>
+			<value_node value="638134"/>
+			<value_node value="644486"/>
+			<value_node value="648766"/>
+		</payout>
+	</narrative>
+	<!-- 3 Day pro -->
+	<narrative id="dayselect_random_p_3" name_id="heist_dayselect_random_3_name" brief_id="heist_dayselect_random_p_3_crimenet" contact="random_pros" icon="icons/OverkillIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="98175"/>
+			<value_node value="180156"/>
+			<value_node value="390417"/>
+			<value_node value="738612"/>
+			<value_node value="957201"/>
+			<value_node value="966729"/>
+			<value_node value="973149"/>
+		</payout>
+	</narrative>
+	<!-- 4 Day pro -->
+	<narrative id="dayselect_random_p_4" name_id="heist_dayselect_random_4_name" brief_id="heist_dayselect_random_p_4_crimenet" contact="random_pros" icon="icons/MayhemIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="130900"/>
+			<value_node value="240208"/>
+			<value_node value="520556"/>
+			<value_node value="984816"/>
+			<value_node value="1276268"/>
+			<value_node value="1288972"/>
+			<value_node value="1297532"/>
+		</payout>
+	</narrative>
+	<!-- 5 Day pro -->
+	<narrative id="dayselect_random_p_5" name_id="heist_dayselect_random_5_name" brief_id="heist_dayselect_random_p_5_crimenet" contact="random_pros" icon="icons/DeathWishIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="163625"/>
+			<value_node value="300260"/>
+			<value_node value="650695"/>
+			<value_node value="1231020"/>
+			<value_node value="1595335"/>
+			<value_node value="1611215"/>
+			<value_node value="1621915"/>
+		</payout>
+	</narrative>
+	<!-- 6 Day pro -->
+	<narrative id="dayselect_random_p_6" name_id="heist_dayselect_random_6_name" brief_id="heist_dayselect_random_p_6_crimenet" contact="random_pros" icon="icons/DeathSentenceIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="196350"/>
+			<value_node value="360312"/>
+			<value_node value="780834"/>
+			<value_node value="1477224"/>
+			<value_node value="1914402"/>
+			<value_node value="1933458"/>
+			<value_node value="1946298"/>
+		</payout>
+	</narrative>
+	<!-- 7 Day pro -->
+	<narrative id="dayselect_random_p_7" name_id="heist_dayselect_random_7_name" brief_id="heist_dayselect_random_p_7_crimenet" contact="random_pros" icon="icons/OneDownIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="229075"/>
+			<value_node value="420364"/>
+			<value_node value="910973"/>
+			<value_node value="1723428"/>
+			<value_node value="2233469"/>
+			<value_node value="2255701"/>
+			<value_node value="2270681"/>
+		</payout>
+	</narrative>
+	
+	<!-- Stealth -->
+	<!-- 1 Day -->
+	<narrative id="dayselect_random_t_1" name_id="heist_dayselect_random_1_name" brief_id="heist_dayselect_random_t_1_crimenet" contact="random_stealth" icon="icons/NormalIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="32725"/>
+			<value_node value="60052"/>
+			<value_node value="130139"/>
+			<value_node value="246204"/>
+			<value_node value="319067"/>
+			<value_node value="322243"/>
+			<value_node value="324383"/>
+		</payout>
+	</narrative>
+	<!-- 2 Day -->
+	<narrative id="dayselect_random_t_2" name_id="heist_dayselect_random_2_name" brief_id="heist_dayselect_random_t_2_crimenet" contact="random_stealth" icon="icons/HardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="65450"/>
+			<value_node value="120104"/>
+			<value_node value="260278"/>
+			<value_node value="492408"/>
+			<value_node value="638134"/>
+			<value_node value="644486"/>
+			<value_node value="648766"/>
+		</payout>
+	</narrative>
+	<!-- 3 Day -->
+	<narrative id="dayselect_random_t_3" name_id="heist_dayselect_random_3_name" brief_id="heist_dayselect_random_t_3_crimenet" contact="random_stealth" icon="icons/VeryHardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="98175"/>
+			<value_node value="180156"/>
+			<value_node value="390417"/>
+			<value_node value="738612"/>
+			<value_node value="957201"/>
+			<value_node value="966729"/>
+			<value_node value="973149"/>
+		</payout>
+	</narrative>
+	<!-- 4 Day -->
+	<narrative id="dayselect_random_t_4" name_id="heist_dayselect_random_4_name" brief_id="heist_dayselect_random_t_4_crimenet" contact="random_stealth" icon="icons/OverkillIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="130900"/>
+			<value_node value="240208"/>
+			<value_node value="520556"/>
+			<value_node value="984816"/>
+			<value_node value="1276268"/>
+			<value_node value="1288972"/>
+			<value_node value="1297532"/>
+		</payout>
+	</narrative>
+	<!-- 5 Day -->
+	<narrative id="dayselect_random_t_5" name_id="heist_dayselect_random_5_name" brief_id="heist_dayselect_random_t_5_crimenet" contact="random_stealth" icon="icons/MayhemIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="163625"/>
+			<value_node value="300260"/>
+			<value_node value="650695"/>
+			<value_node value="1231020"/>
+			<value_node value="1595335"/>
+			<value_node value="1611215"/>
+			<value_node value="1621915"/>
+		</payout>
+	</narrative>
+	<!-- 6 Day -->
+	<narrative id="dayselect_random_t_6" name_id="heist_dayselect_random_6_name" brief_id="heist_dayselect_random_t_6_crimenet" contact="random_stealth" icon="icons/DeathWishIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="196350"/>
+			<value_node value="360312"/>
+			<value_node value="780834"/>
+			<value_node value="1477224"/>
+			<value_node value="1914402"/>
+			<value_node value="1933458"/>
+			<value_node value="1946298"/>
+		</payout>
+	</narrative>
+	<!-- 7 Day -->
+	<narrative id="dayselect_random_t_7" name_id="heist_dayselect_random_7_name" brief_id="heist_dayselect_random_t_7_crimenet" contact="random_stealth" icon="icons/DeathSentenceIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="229075"/>
+			<value_node value="420364"/>
+			<value_node value="910973"/>
+			<value_node value="1723428"/>
+			<value_node value="2233469"/>
+			<value_node value="2255701"/>
+			<value_node value="2270681"/>
+		</payout>
+	</narrative>
+	
+	<!-- Stealth Pros -->
+	<!-- 1 Day -->
+	<narrative id="dayselect_random_r_1" name_id="heist_dayselect_random_1_name" brief_id="heist_dayselect_random_r_1_crimenet" contact="random_stealth_pros" icon="icons/HardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+			<value_node value="47474"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+			<value_node value="20740"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="32725"/>
+			<value_node value="60052"/>
+			<value_node value="130139"/>
+			<value_node value="246204"/>
+			<value_node value="319067"/>
+			<value_node value="322243"/>
+			<value_node value="324383"/>
+		</payout>
+	</narrative>
+	<!-- 2 Day pro -->
+	<narrative id="dayselect_random_r_2" name_id="heist_dayselect_random_2_name" brief_id="heist_dayselect_random_r_2_crimenet" contact="random_stealth_pros" icon="icons/VeryHardIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+			<value_node value="54595"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+			<value_node value="23851"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="65450"/>
+			<value_node value="120104"/>
+			<value_node value="260278"/>
+			<value_node value="492408"/>
+			<value_node value="638134"/>
+			<value_node value="644486"/>
+			<value_node value="648766"/>
+		</payout>
+	</narrative>
+	<!-- 3 Day pro -->
+	<narrative id="dayselect_random_r_3" name_id="heist_dayselect_random_3_name" brief_id="heist_dayselect_random_r_3_crimenet" contact="random_stealth_pros" icon="icons/OverkillIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+			<value_node value="57918"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+			<value_node value="25303"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="98175"/>
+			<value_node value="180156"/>
+			<value_node value="390417"/>
+			<value_node value="738612"/>
+			<value_node value="957201"/>
+			<value_node value="966729"/>
+			<value_node value="973149"/>
+		</payout>
+	</narrative>
+	<!-- 4 Day pro -->
+	<narrative id="dayselect_random_r_4" name_id="heist_dayselect_random_4_name" brief_id="heist_dayselect_random_r_4_crimenet" contact="random_stealth_pros" icon="icons/MayhemIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+			<value_node value="61241"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+			<value_node value="26755"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="130900"/>
+			<value_node value="240208"/>
+			<value_node value="520556"/>
+			<value_node value="984816"/>
+			<value_node value="1276268"/>
+			<value_node value="1288972"/>
+			<value_node value="1297532"/>
+		</payout>
+	</narrative>
+	<!-- 5 Day pro -->
+	<narrative id="dayselect_random_r_5" name_id="heist_dayselect_random_5_name" brief_id="heist_dayselect_random_r_5_crimenet" contact="random_stealth_pros" icon="icons/DeathWishIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+			<value_node value="64565"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+			<value_node value="28206"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="163625"/>
+			<value_node value="300260"/>
+			<value_node value="650695"/>
+			<value_node value="1231020"/>
+			<value_node value="1595335"/>
+			<value_node value="1611215"/>
+			<value_node value="1621915"/>
+		</payout>
+	</narrative>
+	<!-- 6 Day pro -->
+	<narrative id="dayselect_random_r_6" name_id="heist_dayselect_random_6_name" brief_id="heist_dayselect_random_r_6_crimenet" contact="random_stealth_pros" icon="icons/DeathSentenceIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+			<value_node value="67888"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+			<value_node value="29658"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="196350"/>
+			<value_node value="360312"/>
+			<value_node value="780834"/>
+			<value_node value="1477224"/>
+			<value_node value="1914402"/>
+			<value_node value="1933458"/>
+			<value_node value="1946298"/>
+		</payout>
+	</narrative>
+	<!-- 7 Day pro -->
+	<narrative id="dayselect_random_r_7" name_id="heist_dayselect_random_7_name" brief_id="heist_dayselect_random_r_7_crimenet" contact="random_stealth_pros" icon="icons/OneDownIcon" briefing_event="" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<professional>
+			<value_node value="true"/>
+		</professional>
+		<region>
+			<value_node value="professional"/>
+		</region>
+		<contract_cost>
+			<value_node value="20710"/>
+			<value_node value="40490"/>
+			<value_node value="103710"/>
+			<value_node value="207030"/>
+			<value_node value="264545"/>
+			<value_node value="264790"/>
+			<value_node value="265030"/>
+		</contract_cost>
+		<crimenet_callouts>
+		<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+		<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+			<value_node value="71211"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+			<value_node value="31110"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="229075"/>
+			<value_node value="420364"/>
+			<value_node value="910973"/>
+			<value_node value="1723428"/>
+			<value_node value="2233469"/>
+			<value_node value="2255701"/>
+			<value_node value="2270681"/>
+		</payout>
+	</narrative>
+	
+	<!-- Escapes -->
+	
+	<!-- Cafe -->
+	<!-- Day -->
+	<narrative id="escape_cafe_day_s" brief_id="heist_escape_cafe_briefing" contact="escapes" icon="guis/dlcs/bro/textures/pd2/crimenet/escape_cafe" briefing_event="" debrief_event="">
+		<chain>
+			<table level_id="escape_cafe_day" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="10355"/>
+			<value_node value="20245"/>
+			<value_node value="51855"/>
+			<value_node value="103515"/>
+			<value_node value="132272"/>
+			<value_node value="132395"/>
+			<value_node value="132515"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="16362"/>
+			<value_node value="30026"/>
+			<value_node value="65069"/>
+			<value_node value="123102"/>
+			<value_node value="159533"/>
+			<value_node value="161121"/>
+			<value_node value="162191"/>
+		</payout>
+	</narrative>
+	<!-- Night -->
+	<narrative id="escape_cafe_s" brief_id="heist_escape_cafe_briefing" contact="escapes" icon="guis/dlcs/bro/textures/pd2/crimenet/escape_cafe" briefing_event="" debrief_event="">
+		<chain>
+			<table level_id="escape_cafe" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="10355"/>
+			<value_node value="20245"/>
+			<value_node value="51855"/>
+			<value_node value="103515"/>
+			<value_node value="132272"/>
+			<value_node value="132395"/>
+			<value_node value="132515"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="16362"/>
+			<value_node value="30026"/>
+			<value_node value="65069"/>
+			<value_node value="123102"/>
+			<value_node value="159533"/>
+			<value_node value="161121"/>
+			<value_node value="162191"/>
+		</payout>
+	</narrative>
+	
+	<!-- Park -->
+	<!-- Day -->
+	<narrative id="escape_park_day_s" brief_id="heist_escape_park_briefing" contact="escapes" icon="guis/dlcs/bro/textures/pd2/crimenet/escape_park" briefing_event="" debrief_event="">
+		<chain>
+			<table level_id="escape_park_day" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="10355"/>
+			<value_node value="20245"/>
+			<value_node value="51855"/>
+			<value_node value="103515"/>
+			<value_node value="132272"/>
+			<value_node value="132395"/>
+			<value_node value="132515"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="16362"/>
+			<value_node value="30026"/>
+			<value_node value="65069"/>
+			<value_node value="123102"/>
+			<value_node value="159533"/>
+			<value_node value="161121"/>
+			<value_node value="162191"/>
+		</payout>
+	</narrative>
+	<!-- Night -->
+	<narrative id="escape_park_s" brief_id="heist_escape_park_briefing" contact="escapes" icon="guis/dlcs/bro/textures/pd2/crimenet/escape_park" briefing_event="" debrief_event="">
+		<chain>
+			<table level_id="escape_park" type="d" type_id="heist_type_assault" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="10355"/>
+			<value_node value="20245"/>
+			<value_node value="51855"/>
+			<value_node value="103515"/>
+			<value_node value="132272"/>
+			<value_node value="132395"/>
+			<value_node value="132515"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="16362"/>
+			<value_node value="30026"/>
+			<value_node value="65069"/>
+			<value_node value="123102"/>
+			<value_node value="159533"/>
+			<value_node value="161121"/>
+			<value_node value="162191"/>
+		</payout>
+	</narrative>
+	
+	<!-- Street -->
+	<narrative id="escape_street_s" brief_id="heist_escape_street_briefing" contact="escapes" icon="guis/dlcs/bro/textures/pd2/crimenet/escape_street" briefing_event="" debrief_event="">
+		<chain>
+			<table level_id="escape_street" type="d" type_id="heist_type_assault" region="street" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="10355"/>
+			<value_node value="20245"/>
+			<value_node value="51855"/>
+			<value_node value="103515"/>
+			<value_node value="132272"/>
+			<value_node value="132395"/>
+			<value_node value="132515"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="16362"/>
+			<value_node value="30026"/>
+			<value_node value="65069"/>
+			<value_node value="123102"/>
+			<value_node value="159533"/>
+			<value_node value="161121"/>
+			<value_node value="162191"/>
+		</payout>
+	</narrative>
+	
+	<!-- Overpass -->
+	<narrative id="escape_overpass_s" brief_id="heist_escape_overpass_briefing" contact="escapes" icon="guis/dlcs/bro/textures/pd2/crimenet/escape_overpass" briefing_event="" debrief_event="">
+		<chain>
+			<table level_id="escape_overpass" type="d" type_id="heist_type_assault" region="street" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="10355"/>
+			<value_node value="20245"/>
+			<value_node value="51855"/>
+			<value_node value="103515"/>
+			<value_node value="132272"/>
+			<value_node value="132395"/>
+			<value_node value="132515"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="16362"/>
+			<value_node value="30026"/>
+			<value_node value="65069"/>
+			<value_node value="123102"/>
+			<value_node value="159533"/>
+			<value_node value="161121"/>
+			<value_node value="162191"/>
+		</payout>
+	</narrative>
+	
+	<!-- Garage -->
+	<narrative id="escape_garage_s" brief_id="heist_escape_garage_briefing" contact="escapes" icon="guis/dlcs/bro/textures/pd2/crimenet/escape_garage" briefing_event="" debrief_event="">
+		<chain>
+			<table level_id="escape_garage" type="d" type_id="heist_type_assault" region="street" intro_event="Play_dr1_a01" outro_event=""/>
+		</chain>
+		<contract_cost>
+			<value_node value="10355"/>
+			<value_node value="20245"/>
+			<value_node value="51855"/>
+			<value_node value="103515"/>
+			<value_node value="132272"/>
+			<value_node value="132395"/>
+			<value_node value="132515"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<!-- placeholder -->
+			<value_node value="nothing"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<!-- placeholder -->
+			<value_node value="cn_branchbank2"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+			<value_node value="11868"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+			<value_node value="5185"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="16362"/>
+			<value_node value="30026"/>
+			<value_node value="65069"/>
+			<value_node value="123102"/>
+			<value_node value="159533"/>
+			<value_node value="161121"/>
+			<value_node value="162191"/>
+		</payout>
+	</narrative>
+	
+	<!-- 2 Day Heists -->
+	
+	<!-- Big Oil Heist -->
+	<!-- Day 1 -->
+	<narrative id="welcome_to_the_jungle_s_1" brief_id="heist_welcome_to_the_jungle_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/bigoil_01" briefing_event="elp_bigoil_brf" debrief_event="elp_bigoil_debrief">
+		<chain>
+			<table level_id="welcome_to_the_jungle_1" type="e" type_id="heist_type_assault" world_setting="day"/>
+		</chain>
+		<contract_cost>
+			<value_node value="10000"/>
+			<value_node value="18000"/>
+			<value_node value="25000"/>
+			<value_node value="45000"/>
+			<value_node value="75000"/>
+			<value_node value="75000"/>
+			<value_node value="75000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_bigoil_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_bigoil1"/>
+			<value_node value="cn_bigoil2"/>
+			<value_node value="cn_bigoil3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="100000"/>
+			<value_node value="137500"/>
+			<value_node value="200000"/>
+			<value_node value="250000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</payout>
+	</narrative>
+	<!-- Night -->
+	<narrative id="welcome_to_the_jungle_s_1n" brief_id="heist_welcome_to_the_jungle_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/bigoil_01" briefing_event="elp_bigoil_brf" debrief_event="elp_bigoil_debrief">
+		<chain>
+			<table level_id="welcome_to_the_jungle_1_night" type="e" type_id="heist_type_assault" world_setting="night"/>
+		</chain>
+		<contract_cost>
+			<value_node value="10000"/>
+			<value_node value="18000"/>
+			<value_node value="25000"/>
+			<value_node value="45000"/>
+			<value_node value="75000"/>
+			<value_node value="75000"/>
+			<value_node value="75000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_bigoil_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_bigoil1"/>
+			<value_node value="cn_bigoil2"/>
+			<value_node value="cn_bigoil3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="100000"/>
+			<value_node value="137500"/>
+			<value_node value="200000"/>
+			<value_node value="250000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="welcome_to_the_jungle_s_2" brief_id="heist_welcome_to_the_jungle_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/bigoil_02" briefing_event="elp_bigoil_brf" debrief_event="elp_bigoil_debrief">
+		<chain>
+			<table level_id="welcome_to_the_jungle_2" type="e" type_id="heist_type_stealth" world_setting="day"/>
+		</chain>
+		<contract_cost>
+			<value_node value="10000"/>
+			<value_node value="18000"/>
+			<value_node value="25000"/>
+			<value_node value="45000"/>
+			<value_node value="75000"/>
+			<value_node value="75000"/>
+			<value_node value="75000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_bigoil_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_bigoil1"/>
+			<value_node value="cn_bigoil2"/>
+			<value_node value="cn_bigoil3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+			<value_node value="18750"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="100000"/>
+			<value_node value="137500"/>
+			<value_node value="200000"/>
+			<value_node value="250000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</payout>
+	</narrative>
+	
+	<!-- Election Day -->
+	<!-- Day 1 -->
+	<narrative id="election_day_s_1" brief_id="heist_election_day_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/electionday_01" briefing_event="elp_election_brf" debrief_event="elp_election_debrief">
+		<chain>
+			<table level_id="election_day_1" type="e" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="12000"/>
+			<value_node value="24000"/>
+			<value_node value="60000"/>
+			<value_node value="120000"/>
+			<value_node value="150000"/>
+			<value_node value="150000"/>
+			<value_node value="150000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_election_cmc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_elcday1"/>
+			<value_node value="cn_elcday2"/>
+			<value_node value="cn_elcday3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="10000"/>
+			<value_node value="12500"/>
+			<value_node value="20000"/>
+			<value_node value="30000"/>
+			<value_node value="45000"/>
+			<value_node value="45000"/>
+			<value_node value="45000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="election_day_s_2" brief_id="heist_election_day_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/electionday_02" briefing_event="elp_election_brf" debrief_event="elp_election_debrief">
+		<chain>
+			<table level_id="election_day_2" type="e" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="12000"/>
+			<value_node value="24000"/>
+			<value_node value="60000"/>
+			<value_node value="120000"/>
+			<value_node value="150000"/>
+			<value_node value="150000"/>
+			<value_node value="150000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_election_cmc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_elcday1"/>
+			<value_node value="cn_elcday2"/>
+			<value_node value="cn_elcday3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="10000"/>
+			<value_node value="12500"/>
+			<value_node value="20000"/>
+			<value_node value="30000"/>
+			<value_node value="45000"/>
+			<value_node value="45000"/>
+			<value_node value="45000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 Plan B -->
+	<narrative id="election_day_s_3" brief_id="heist_election_day_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/electionday_03" briefing_event="elp_election_brf" debrief_event="elp_election_debrief">
+		<chain>
+			<table level_id="election_day_3" type="e" type_id="heist_type_knockover"/>
+		</chain>
+		<contract_cost>
+			<value_node value="12000"/>
+			<value_node value="24000"/>
+			<value_node value="60000"/>
+			<value_node value="120000"/>
+			<value_node value="150000"/>
+			<value_node value="150000"/>
+			<value_node value="150000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_election_cmc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_elcday1"/>
+			<value_node value="cn_elcday2"/>
+			<value_node value="cn_elcday3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+			<value_node value="22000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="10000"/>
+			<value_node value="12500"/>
+			<value_node value="20000"/>
+			<value_node value="30000"/>
+			<value_node value="45000"/>
+			<value_node value="45000"/>
+			<value_node value="45000"/>
+		</payout>
+	</narrative>
+	
+	<!-- Goat Simulator -->
+	<!-- Day 1 -->
+	<narrative id="peta_s_1" brief_id="heist_peta_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/goatsim_01" dlc="peta" briefing_event="vld_pt1_cbf_01" debrief_event="">
+		<chain>
+			<table level_id="peta" type="d" dlc="peta" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="vld_pt1_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_ukr1"/>
+			<value_node value="cn_ukr2"/>
+			<value_node value="cn_ukr3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="125000"/>
+			<value_node value="250000"/>
+			<value_node value="625000"/>
+			<value_node value="1250000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="peta_s_2" brief_id="heist_peta_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/goatsim_02" dlc="peta" briefing_event="vld_pt1_cbf_01" debrief_event="">
+		<chain>
+			<table level_id="peta2" type="d" dlc="peta" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="vld_pt1_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_ukr1"/>
+			<value_node value="cn_ukr2"/>
+			<value_node value="cn_ukr3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+			<value_node value="61000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+			<value_node value="19000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="125000"/>
+			<value_node value="250000"/>
+			<value_node value="625000"/>
+			<value_node value="1250000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+		</payout>
+	</narrative>
+
+	<!-- Hotline Miami -->
+	<!-- Day 1 -->
+	<narrative id="hl_miami_s_1" brief_id="heist_mia_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/hotline_miami_01" dlc="hl_miami" briefing_event="dentist_hm1_cnc_01" debrief_event="dentist_hm1_debrief_01_01">
+		<chain>
+			<table level_id="mia_1" type="d" dlc="hl_miami" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="dentist_hm1_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_hlm1"/>
+			<value_node value="cn_hlm2"/>
+			<value_node value="cn_hlm3"/>
+			<value_node value="cn_big1"/>
+			<value_node value="cn_big2"/>
+			<value_node value="cn_big3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="18500"/>
+			<value_node value="21500"/>
+			<value_node value="30000"/>
+			<value_node value="35000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="hl_miami_s_2" brief_id="heist_mia_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/hotline_miami_02" dlc="hl_miami" briefing_event="dentist_hm1_cnc_01" debrief_event="dentist_hm1_debrief_01_01">
+		<chain>
+			<table level_id="mia_2" type="d" dlc="hl_miami" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="dentist_hm1_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_hlm1"/>
+			<value_node value="cn_hlm2"/>
+			<value_node value="cn_hlm3"/>
+			<value_node value="cn_big1"/>
+			<value_node value="cn_big2"/>
+			<value_node value="cn_big3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+			<value_node value="1.4"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+			<value_node value="34500"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="18500"/>
+			<value_node value="21500"/>
+			<value_node value="30000"/>
+			<value_node value="35000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+		</payout>
+	</narrative>
+
+	<!-- Hoxton Breakout -->
+	<!-- Day 1 -->
+	<narrative id="hox_s_1" brief_id="heist_hox_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/hoxton_breakout_01" briefing_event="dentist_hb1_cbf_01" debrief_event="">
+		<chain>
+			<table level_id="hox_1" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="dentist_hb1_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_hox1"/>
+			<value_node value="cn_hox2"/>
+			<value_node value="cn_hox3"/>
+			<value_node value="cn_hox4"/>
+			<value_node value="cn_big1"/>
+			<value_node value="cn_big2"/>
+			<value_node value="cn_big3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="125000"/>
+			<value_node value="250000"/>
+			<value_node value="625000"/>
+			<value_node value="1250000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="hox_s_2" brief_id="heist_hox_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/hoxton_breakout_02" briefing_event="dentist_hb1_cbf_01" debrief_event="">
+		<chain>
+			<table level_id="hox_2" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="dentist_hb1_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_hox1"/>
+			<value_node value="cn_hox2"/>
+			<value_node value="cn_hox3"/>
+			<value_node value="cn_hox4"/>
+			<value_node value="cn_big1"/>
+			<value_node value="cn_big2"/>
+			<value_node value="cn_big3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+			<value_node value="26700"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+			<value_node value="24400"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="125000"/>
+			<value_node value="250000"/>
+			<value_node value="625000"/>
+			<value_node value="1250000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+			<value_node value="1600000"/>
+		</payout>
+	</narrative>
+
+	<!-- Reservoir Dogs -->
+	<!-- Day 1 -->
+	<narrative id="rvd_s_1" brief_id="heist_rvd_crimenet" contact="dayselect" icon="guis/dlcs/rvd/textures/pd2/crimenet/rvd" briefing_event="Play_pln_rvd_cbf_01" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="rvd1" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="8000"/>
+			<value_node value="16000"/>
+			<value_node value="40000"/>
+			<value_node value="80000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_pln_rvd_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank1"/>
+			<value_node value="cn_branchbank3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="10000"/>
+			<value_node value="15000"/>
+			<value_node value="20000"/>
+			<value_node value="35000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="rvd_s_2" brief_id="heist_rvd_crimenet" contact="dayselect" icon="icons/rvd2" briefing_event="Play_pln_rvd_cbf_01" debrief_event="" package="packages/narr_rvd">
+		<chain>
+			<table level_id="rvd2" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="8000"/>
+			<value_node value="16000"/>
+			<value_node value="40000"/>
+			<value_node value="80000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_pln_rvd_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank1"/>
+			<value_node value="cn_branchbank3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+			<value_node value="23750"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+			<value_node value="14750"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="10000"/>
+			<value_node value="15000"/>
+			<value_node value="20000"/>
+			<value_node value="35000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+			<value_node value="40000"/>
+		</payout>
+	</narrative>
+
+	<!-- Biker -->
+	<!-- Day 1 -->
+	<narrative id="born_s_1" brief_id="heist_born_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/biker_01" dlc="born" briefing_event="elp_brn_cbf_01" debrief_event="">
+		<chain>
+			<table level_id="born" type="d" dlc="born" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_brn_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_elcday1"/>
+			<value_node value="cn_elcday2"/>
+			<value_node value="cn_elcday3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="67500"/>
+			<value_node value="137500"/>
+			<value_node value="346153"/>
+			<value_node value="675000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="born_s_2" brief_id="heist_born_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/biker_02" dlc="born" briefing_event="elp_brn_cbf_01" debrief_event="">
+		<chain>
+			<table level_id="chew" type="d" dlc="born" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_brn_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_elcday1"/>
+			<value_node value="cn_elcday2"/>
+			<value_node value="cn_elcday3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+			<value_node value="7000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+			<value_node value="5000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="67500"/>
+			<value_node value="137500"/>
+			<value_node value="346153"/>
+			<value_node value="675000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+		</payout>
+	</narrative>
+	
+	<!-- Watchdogs -->
+	<!-- Day 1 -->
+	<narrative id="watchdogs_s_1" brief_id="heist_watchdogs_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/watchdogs_01" briefing_event="hct_watchdogs_brf_speak" debrief_event="hct_watchdogs_debrief">
+		<chain>
+			<table level_id="watchdogs_1" type="d" type_id="heist_type_survive" world_setting="day"/>
+		</chain>
+		<contract_cost>
+			<value_node value="15500"/>
+			<value_node value="31000"/>
+			<value_node value="77500"/>
+			<value_node value="155000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_watchdogs_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_watchdog1"/>
+			<value_node value="cn_watchdog2"/>
+			<value_node value="cn_watchdog3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="30000"/>
+			<value_node value="37000"/>
+			<value_node value="62500"/>
+			<value_node value="92500"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+		</payout>
+	</narrative>
+	<!-- Night -->
+	<narrative id="watchdogs_s_1n" brief_id="heist_watchdogs_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/watchdogs_01" briefing_event="hct_watchdogs_brf_speak" debrief_event="hct_watchdogs_debrief">
+		<chain>
+			<table level_id="watchdogs_1_night" type="d" type_id="heist_type_survive" world_setting="night"/>
+		</chain>
+		<contract_cost>
+			<value_node value="15500"/>
+			<value_node value="31000"/>
+			<value_node value="77500"/>
+			<value_node value="155000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_watchdogs_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_watchdog1"/>
+			<value_node value="cn_watchdog2"/>
+			<value_node value="cn_watchdog3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="30000"/>
+			<value_node value="37000"/>
+			<value_node value="62500"/>
+			<value_node value="92500"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2-->
+	<narrative id="watchdogs_s_2" brief_id="heist_watchdogs_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/watchdogs_02" briefing_event="hct_watchdogs_brf_speak" debrief_event="hct_watchdogs_debrief">
+		<chain>
+			<table level_id="watchdogs_2_day" type="d" type_id="heist_type_survive" world_setting="day"/>
+		</chain>
+		<contract_cost>
+			<value_node value="15500"/>
+			<value_node value="31000"/>
+			<value_node value="77500"/>
+			<value_node value="155000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_watchdogs_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_watchdog1"/>
+			<value_node value="cn_watchdog2"/>
+			<value_node value="cn_watchdog3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="30000"/>
+			<value_node value="37000"/>
+			<value_node value="62500"/>
+			<value_node value="92500"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+		</payout>
+	</narrative>
+	<!-- Night -->
+	<narrative id="watchdogs_s_2n" brief_id="heist_watchdogs_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/watchdogs_02" briefing_event="hct_watchdogs_brf_speak" debrief_event="hct_watchdogs_debrief">
+		<chain>
+			<table level_id="watchdogs_2" type="d" type_id="heist_type_survive" world_setting="night"/>
+		</chain>
+		<contract_cost>
+			<value_node value="15500"/>
+			<value_node value="31000"/>
+			<value_node value="77500"/>
+			<value_node value="155000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_watchdogs_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_watchdog1"/>
+			<value_node value="cn_watchdog2"/>
+			<value_node value="cn_watchdog3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+			<value_node value="20000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="30000"/>
+			<value_node value="37000"/>
+			<value_node value="62500"/>
+			<value_node value="92500"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+			<value_node value="130000"/>
+		</payout>
+	</narrative>
+	
+	<!-- 3 Day Heists -->
+	
+	<!-- Firestarter -->
+	<!-- Day 1 -->
+	<narrative id="firestarter_s_1" brief_id="heist_firestarter_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/firestarter_01" briefing_event="hct_firestarter_brf" debrief_event="hct_firestarter_debrief">
+		<chain>
+			<table level_id="firestarter_1" type="d" type_id="heist_type_hijack"/>
+		</chain>
+		<contract_cost>
+			<value_node value="12870"/>
+			<value_node value="25740"/>
+			<value_node value="64350"/>
+			<value_node value="128700"/>
+			<value_node value="165000"/>
+			<value_node value="165000"/>
+			<value_node value="165000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_firestarter_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_fires1"/>
+			<value_node value="cn_fires2"/>
+			<value_node value="cn_fires3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="23100"/>
+			<value_node value="31350"/>
+			<value_node value="41250"/>
+			<value_node value="66000"/>
+			<value_node value="82500"/>
+			<value_node value="82500"/>
+			<value_node value="82500"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="firestarter_s_2" brief_id="heist_firestarter_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/firestarter_02" briefing_event="hct_firestarter_brf" debrief_event="hct_firestarter_debrief">
+		<chain>
+			<table level_id="firestarter_2" type="d" type_id="heist_type_stealth"/>
+		</chain>
+		<contract_cost>
+			<value_node value="12870"/>
+			<value_node value="25740"/>
+			<value_node value="64350"/>
+			<value_node value="128700"/>
+			<value_node value="165000"/>
+			<value_node value="165000"/>
+			<value_node value="165000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_firestarter_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_fires1"/>
+			<value_node value="cn_fires2"/>
+			<value_node value="cn_fires3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="23100"/>
+			<value_node value="31350"/>
+			<value_node value="41250"/>
+			<value_node value="66000"/>
+			<value_node value="82500"/>
+			<value_node value="82500"/>
+			<value_node value="82500"/>
+		</payout>
+	</narrative>
+	<!-- Day 3 -->
+	<narrative id="firestarter_s_3" brief_id="heist_firestarter_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/firestarter_03" briefing_event="hct_firestarter_brf" debrief_event="hct_firestarter_debrief">
+		<chain>
+			<table level_id="firestarter_3" type="d" type_id="heist_type_knockover" mission="default">
+				<mission_filter>
+					<value_node value="5"/>
+				</mission_filter>
+			</table>
+		</chain>
+		<contract_cost>
+			<value_node value="12870"/>
+			<value_node value="25740"/>
+			<value_node value="64350"/>
+			<value_node value="128700"/>
+			<value_node value="165000"/>
+			<value_node value="165000"/>
+			<value_node value="165000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_firestarter_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_fires1"/>
+			<value_node value="cn_fires2"/>
+			<value_node value="cn_fires3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+			<value_node value="1.2"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+			<value_node value="14520"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+			<value_node value="9900"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="23100"/>
+			<value_node value="31350"/>
+			<value_node value="41250"/>
+			<value_node value="66000"/>
+			<value_node value="82500"/>
+			<value_node value="82500"/>
+			<value_node value="82500"/>
+		</payout>
+	</narrative>
+	
+	<!-- Framing Frame -->
+	<!-- Day 1 -->
+	<narrative id="framing_frame_s_1" brief_id="heist_framing_frame_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/gallery" briefing_event="elp_framing_brf" debrief_event="elp_framing_debrief">
+		<chain>
+			<table level_id="framing_frame_1" type="e" type_id="heist_type_knockover"/>
+		</chain>
+		<contract_cost>
+			<value_node value="10230"/>
+			<value_node value="20460"/>
+			<value_node value="51150"/>
+			<value_node value="102300"/>
+			<value_node value="132000"/>
+			<value_node value="132000"/>
+			<value_node value="132000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_framing_cmc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_framingframe1"/>
+			<value_node value="cn_framingframe2"/>
+			<value_node value="cn_framingframe3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="6105"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="19800"/>
+			<value_node value="39600"/>
+			<value_node value="99000"/>
+			<value_node value="198000"/>
+			<value_node value="264000"/>
+			<value_node value="264000"/>
+			<value_node value="264000"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="framing_frame_s_2" brief_id="heist_framing_frame_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/framingframe_02" briefing_event="elp_framing_brf" debrief_event="elp_framing_debrief">
+		<chain>
+			<table level_id="framing_frame_2" type="e" type_id="heist_type_trade"/>
+		</chain>
+		<contract_cost>
+			<value_node value="10230"/>
+			<value_node value="20460"/>
+			<value_node value="51150"/>
+			<value_node value="102300"/>
+			<value_node value="132000"/>
+			<value_node value="132000"/>
+			<value_node value="132000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_framing_cmc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_framingframe1"/>
+			<value_node value="cn_framingframe2"/>
+			<value_node value="cn_framingframe3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="6105"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="19800"/>
+			<value_node value="39600"/>
+			<value_node value="99000"/>
+			<value_node value="198000"/>
+			<value_node value="264000"/>
+			<value_node value="264000"/>
+			<value_node value="264000"/>
+		</payout>
+	</narrative>
+	<!-- Day 3 -->
+	<narrative id="framing_frame_s_3" brief_id="heist_framing_frame_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/framingframe_03" briefing_event="elp_framing_brf" debrief_event="elp_framing_debrief">
+		<chain>
+			<table level_id="framing_frame_3" type="e" type_id="heist_type_stealth"/>
+		</chain>
+		<contract_cost>
+			<value_node value="10230"/>
+			<value_node value="20460"/>
+			<value_node value="51150"/>
+			<value_node value="102300"/>
+			<value_node value="132000"/>
+			<value_node value="132000"/>
+			<value_node value="132000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="elp_framing_cmc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_framingframe1"/>
+			<value_node value="cn_framingframe2"/>
+			<value_node value="cn_framingframe3"/>
+		</crimenet_videos>
+		<max_mission_xp>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+			<value_node value="13860"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="6105"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+			<value_node value="6600"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="19800"/>
+			<value_node value="39600"/>
+			<value_node value="99000"/>
+			<value_node value="198000"/>
+			<value_node value="264000"/>
+			<value_node value="264000"/>
+			<value_node value="264000"/>
+		</payout>
+	</narrative>
+	
+	<!-- Rats -->
+	<!-- Day 1 -->
+	<narrative id="alex_s_1" brief_id="heist_alex_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/rats_01" briefing_event="hct_rats_brf_speak" debrief_event="hct_rats_debrief">
+		<chain>
+			<table level_id="alex_1" type="d" type_id="heist_type_survive"/>
+		</chain>
+		<contract_cost>
+			<value_node value="7920"/>
+			<value_node value="15840"/>
+			<value_node value="39600"/>
+			<value_node value="79200"/>
+			<value_node value="99000"/>
+			<value_node value="99000"/>
+			<value_node value="99000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_rats_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_rat1"/>
+			<value_node value="cn_rat2"/>
+			<value_node value="cn_rat3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="3300"/>
+			<value_node value="4950"/>
+			<value_node value="6600"/>
+			<value_node value="9900"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+		</payout>
+	</narrative>
+	<!-- Day 2 -->
+	<narrative id="alex_s_2" brief_id="heist_alex_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/rats_02" briefing_event="hct_rats_brf_speak" debrief_event="hct_rats_debrief">
+		<chain>
+			<table level_id="alex_2" type="d" type_id="heist_type_survive"/>
+		</chain>
+		<contract_cost>
+			<value_node value="7920"/>
+			<value_node value="15840"/>
+			<value_node value="39600"/>
+			<value_node value="79200"/>
+			<value_node value="99000"/>
+			<value_node value="99000"/>
+			<value_node value="99000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_rats_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_rat1"/>
+			<value_node value="cn_rat2"/>
+			<value_node value="cn_rat3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="3300"/>
+			<value_node value="4950"/>
+			<value_node value="6600"/>
+			<value_node value="9900"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+		</payout>
+	</narrative>
+	<!-- Day 3 -->
+	<narrative id="alex_s_3" brief_id="heist_alex_crimenet" contact="dayselect" icon="guis/dlcs/bro/textures/pd2/crimenet/rats_03" briefing_event="hct_rats_brf_speak" debrief_event="hct_rats_debrief">
+		<chain>
+			<table level_id="alex_3" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="7920"/>
+			<value_node value="15840"/>
+			<value_node value="39600"/>
+			<value_node value="79200"/>
+			<value_node value="99000"/>
+			<value_node value="99000"/>
+			<value_node value="99000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_rats_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_rat1"/>
+			<value_node value="cn_rat2"/>
+			<value_node value="cn_rat3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+			<value_node value="1.5"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+			<value_node value="31680"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+			<value_node value="7920"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="3300"/>
+			<value_node value="4950"/>
+			<value_node value="6600"/>
+			<value_node value="9900"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+			<value_node value="16500"/>
+		</payout>
+	</narrative>
+	
+	<AddFiles directory="assets">
+		<texture force="true" path="icons/rvd2"/>
+		<texture force="true" path="icons/NormalIcon"/>
+		<texture force="true" path="icons/HardIcon"/>
+		<texture force="true" path="icons/VeryHardIcon"/>
+		<texture force="true" path="icons/OverkillIcon"/>
+		<texture force="true" path="icons/MayhemIcon"/>
+		<texture force="true" path="icons/DeathWishIcon"/>
+		<texture force="true" path="icons/DeathSentenceIcon"/>
+		<texture force="true" path="icons/OneDownIcon"/>
+	</AddFiles>
+	
+	<Hooks>
+		<hooks directory="hooks">
+			<hook file="menumanager.lua" source_file="lib/managers/menumanager"/>
+			<hook file="missionassetsmanager.lua" source_file="lib/managers/missionassetsmanager"/>
+			<hook file="jobmanager.lua" source_file="lib/managers/jobmanager"/>
+			<hook file="lootmanager.lua" source_file="lib/managers/lootmanager"/>
+			<hook file="hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
+			<hook file="elementmissionend.lua" source_file="lib/managers/mission/elementmissionend"/>
+			<hook file="contractbrokergui.lua" source_file="lib/managers/menu/contractbrokergui"/>
+		</hooks>
+	</Hooks>
+	
+	<Options name="Options" auto_load="true" save_file="AnyDayAnyHeist.txt" loaded_callback="self:loaded_call_back">
+        <options title_id="ADAHOptions_id">
+			<option type="bool" default_value="true" name="RBL_use_blacklist" title_id="RBL_use_blacklist_id"/>
+			<option type="bool" default_value="false" name="RBL_custom" title_id="RBL_custom_id"/>
+			<divider name="ADAHButtonDivider" size="18"/>
+			<option type="bool" default_value="false" name="RBL_use_escape_chance" title_id="RBL_use_escape_chance_id" value_changed="self:apply_escape_chance"/>
+			<option type="number" default_value="0" min="0" max="100" step="1" show_value="true" name="RBL_escape_chance" title_id="RBL_escape_chance_id" value_changed="self:apply_escape_chance"/>
+			<divider name="ADAHButtonDivider" size="18"/>
+			<!-- Regular Options -->
+			<option_group name="ADAHRandomOptions" title_id="ADAHRandomOptions_id">
+				<button name="ADAHRandomHeader" title_id="ADAHRandomHeader_id" index="1"/>
+				<option_group name="ADAHContactBlacklist" title_id="ADAHContactBlacklist_id">
+					<button name="ADAHContactHeader" title_id="ADAHContactHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_bain" title_id="RBL_bain_id"/>
+					<option type="bool" default_value="false" name="RBL_blaine" title_id="RBL_blaine_id"/>
+					<option type="bool" default_value="false" name="RBL_classics" title_id="RBL_classics_id"/>
+					<option type="bool" default_value="false" name="RBL_mcshay" title_id="RBL_mcshay_id"/>
+					<option type="bool" default_value="false" name="RBL_hector" title_id="RBL_hector_id"/>
+					<option type="bool" default_value="false" name="RBL_jimmy" title_id="RBL_jimmy_id"/>
+					<option type="bool" default_value="false" name="RBL_jiu" title_id="RBL_jiu_id"/>
+					<option type="bool" default_value="false" name="RBL_locke" title_id="RBL_locke_id"/>
+					<option type="bool" default_value="false" name="RBL_shayu" title_id="RBL_shayu_id"/>
+					<option type="bool" default_value="false" name="RBL_butcher" title_id="RBL_butcher_id"/>
+					<option type="bool" default_value="false" name="RBL_continental" title_id="RBL_continental_id"/>
+					<option type="bool" default_value="false" name="RBL_dentist" title_id="RBL_dentist_id"/>
+					<option type="bool" default_value="false" name="RBL_elephant" title_id="RBL_elephant_id"/>
+					<option type="bool" default_value="false" name="RBL_vlad" title_id="RBL_vlad_id"/>
+				</option_group>
+				
+				<option_group name="ADAHTypeBlacklist" title_id="ADAHTypeBlacklist_id">
+					<button name="ADAHTypeHeader" title_id="ADAHTypeHeader_id" index="1"/>
+					<option type="bool" default_value="true" name="RBL_stealth" title_id="RBL_stealth_id"/>
+					<option type="bool" default_value="false" name="RBL_stealthable" title_id="RBL_stealthable_id"/>
+					<option type="bool" default_value="false" name="RBL_loud" title_id="RBL_loud_id"/>
+					<divider name="ADAHButtonDivider" size="18"/>
+					<button name="ADAHSubtypeHeader" title_id="ADAHSubtypeHeader_id" index="1"/>
+					<option type="bool" default_value="true" name="RBL_holdout" title_id="RBL_holdout_id"/>
+					<option type="bool" default_value="true" name="RBL_events" title_id="RBL_events_id"/>
+					<option type="bool" default_value="false" name="RBL_escapes" title_id="RBL_escapes_id"/>
+					<option type="bool" default_value="false" name="RBL_transport" title_id="RBL_transport_id"/>
+					<option type="bool" default_value="false" name="RBL_branchbank" title_id="RBL_branchbank_id"/>
+					<option type="bool" default_value="true" name="RBL_trades" title_id="RBL_trades_id"/>
+					<!-- Will need to find average time to complete for each heist then make lists later on. -->
+					<!-- <divider name="ADAHButtonDivider" size="18"/> -->
+					<!-- <option type="bool" default_value="false" name="RBL_short" title_id="RBL_short_id"/> -->
+					<!-- <option type="bool" default_value="false" name="RBL_medium" title_id="RBL_medium_id"/> -->
+					<!-- <option type="bool" default_value="false" name="RBL_long" title_id="RBL_long_id"/> -->
+				</option_group>
+				
+				<option_group name="ADAHSingleStealthBlacklist" title_id="ADAHSingleStealthBlacklist_id">
+					<button name="ADAHDayStealthHeader" title_id="ADAHDayStealthHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_tag" title_id="RBL_tag_id" desc_id="RBL_tag_desc"/>
+					<option type="bool" default_value="false" name="RBL_cage" title_id="RBL_cage_id" desc_id="RBL_cage_desc"/>
+					<option type="bool" default_value="false" name="RBL_dark" title_id="RBL_dark_id" desc_id="RBL_dark_desc"/>
+					<option type="bool" default_value="false" name="RBL_kosugi" title_id="RBL_kosugi_id" desc_id="RBL_kosugi_desc"/>
+					<option type="bool" default_value="false" name="RBL_fish" title_id="RBL_fish_id" desc_id="RBL_fish_desc"/>
+				</option_group>
+				
+				<option_group name="ADAHSingleStealthableBlacklist" title_id="ADAHSingleStealthableBlacklist_id">
+					<button name="ADAHDayStealthableHeader" title_id="ADAHDayStealthableHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_gallery" title_id="RBL_gallery_id" desc_id="RBL_gallery_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_cash" title_id="RBL_branchbank_cash_id" desc_id="RBL_branchbank_cash_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_deposit" title_id="RBL_branchbank_deposit_id" desc_id="RBL_branchbank_deposit_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_gold" title_id="RBL_branchbank_gold_id" desc_id="RBL_branchbank_gold_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_random" title_id="RBL_branchbank_random_id" desc_id="RBL_branchbank_random_desc"/>
+					<option type="bool" default_value="false" name="RBL_welcome_to_the_jungle_1_night" title_id="RBL_welcome_to_the_jungle_1_night_id" desc_id="RBL_welcome_to_the_jungle_1_night_desc"/>
+					<option type="bool" default_value="false" name="RBL_welcome_to_the_jungle_1" title_id="RBL_welcome_to_the_jungle_1_id" desc_id="RBL_welcome_to_the_jungle_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_chca" title_id="RBL_chca_id" desc_id="RBL_chca_desc"/>
+					<option type="bool" default_value="false" name="RBL_mex" title_id="RBL_mex_id" desc_id="RBL_mex_desc"/>
+					<option type="bool" default_value="false" name="RBL_pex" title_id="RBL_pex_id" desc_id="RBL_pex_desc"/>
+					<option type="bool" default_value="false" name="RBL_fex" title_id="RBL_fex_id" desc_id="RBL_fex_desc"/>
+					<option type="bool" default_value="false" name="RBL_deep" title_id="RBL_deep_id" desc_id="RBL_deep_desc"/>
+					<option type="bool" default_value="false" name="RBL_dah" title_id="RBL_dah_id" desc_id="RBL_dah_desc"/>
+					<option type="bool" default_value="false" name="RBL_family" title_id="RBL_family_id" desc_id="RBL_family_desc"/>
+					<option type="bool" default_value="false" name="RBL_chas" title_id="RBL_chas_id" desc_id="RBL_chas_desc"/>
+					<option type="bool" default_value="false" name="RBL_election_day_1" title_id="RBL_election_day_1_id" desc_id="RBL_election_day_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_election_day_2" title_id="RBL_election_day_2_id" desc_id="RBL_election_day_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_firestarter_2" title_id="RBL_firestarter_2_id" desc_id="RBL_firestarter_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_firestarter_3" title_id="RBL_firestarter_3_id" desc_id="RBL_firestarter_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_red2" title_id="RBL_red2_id" desc_id="RBL_red2_desc"/>
+					<option type="bool" default_value="false" name="RBL_four_stores" title_id="RBL_four_stores_id" desc_id="RBL_four_stores_desc"/>
+					<option type="bool" default_value="false" name="RBL_framing_frame_1" title_id="RBL_framing_frame_1_id" desc_id="RBL_framing_frame_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_framing_frame_2" title_id="RBL_framing_frame_2_id" desc_id="RBL_framing_frame_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_framing_frame_3" title_id="RBL_framing_frame_3_id" desc_id="RBL_framing_frame_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_roberts" title_id="RBL_roberts_id" desc_id="RBL_roberts_desc"/>
+					<option type="bool" default_value="false" name="RBL_kenaz" title_id="RBL_kenaz_id" desc_id="RBL_kenaz_desc"/>
+					<option type="bool" default_value="false" name="RBL_corp" title_id="RBL_corp_id" desc_id="RBL_corp_desc"/>
+					<option type="bool" default_value="false" name="RBL_hox_3" title_id="RBL_hox_3_id" desc_id="RBL_hox_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_jewelry_store" title_id="RBL_jewelry_store_id" desc_id="RBL_jewelry_store_desc"/>
+					<option type="bool" default_value="false" name="RBL_trai" title_id="RBL_trai_id" desc_id="RBL_trai_desc"/>
+					<option type="bool" default_value="false" name="RBL_mallcrasher" title_id="RBL_mallcrasher_id" desc_id="RBL_mallcrasher_desc"/>
+					<option type="bool" default_value="false" name="RBL_ranc" title_id="RBL_ranc_id" desc_id="RBL_ranc_desc"/>
+					<option type="bool" default_value="false" name="RBL_pent" title_id="RBL_pent_id" desc_id="RBL_pent_desc"/>
+					<option type="bool" default_value="false" name="RBL_nightclub" title_id="RBL_nightclub_id" desc_id="RBL_nightclub_desc"/>
+					<option type="bool" default_value="false" name="RBL_bex" title_id="RBL_bex_id" desc_id="RBL_bex_desc"/>
+					<option type="bool" default_value="false" name="RBL_friend" title_id="RBL_friend_id" desc_id="RBL_friend_desc"/>
+					<option type="bool" default_value="false" name="RBL_sah" title_id="RBL_sah_id" desc_id="RBL_sah_desc"/>
+					<option type="bool" default_value="false" name="RBL_arena" title_id="RBL_arena_id" desc_id="RBL_arena_desc"/>
+					<option type="bool" default_value="false" name="RBL_big" title_id="RBL_big_id" desc_id="RBL_big_desc"/>
+					<option type="bool" default_value="false" name="RBL_crojob1" title_id="RBL_crojob1_id" desc_id="RBL_crojob1_desc"/>
+					<option type="bool" default_value="false" name="RBL_mus" title_id="RBL_mus_id" desc_id="RBL_mus_desc"/>
+					<option type="bool" default_value="false" name="RBL_sand" title_id="RBL_sand_id" desc_id="RBL_sand_desc"/>
+					<option type="bool" default_value="false" name="RBL_vit" title_id="RBL_vit_id" desc_id="RBL_vit_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_for" title_id="RBL_arm_for_id" desc_id="RBL_arm_for_desc"/>
+					<option type="bool" default_value="false" name="RBL_ukrainian_job" title_id="RBL_ukrainian_job_id" desc_id="RBL_ukrainian_job_desc"/>
+				</option_group>
+				
+				<option_group name="ADAHSingleLoudBlacklist" title_id="ADAHSingleLoudBlacklist_id">
+					<button name="ADAHDayLoudHeader" title_id="ADAHDayLoudHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_jolly" title_id="RBL_jolly_id" desc_id="RBL_jolly_desc"/>
+					<option type="bool" default_value="false" name="RBL_wwh" title_id="RBL_wwh_id" desc_id="RBL_wwh_desc"/>
+					<option type="bool" default_value="false" name="RBL_pbr" title_id="RBL_pbr_id" desc_id="RBL_pbr_desc"/>
+					<option type="bool" default_value="false" name="RBL_welcome_to_the_jungle_2" title_id="RBL_welcome_to_the_jungle_2_id" desc_id="RBL_welcome_to_the_jungle_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_pbr2" title_id="RBL_pbr2_id" desc_id="RBL_pbr2_desc"/>
+					<option type="bool" default_value="false" name="RBL_mad" title_id="RBL_mad_id" desc_id="RBL_mad_desc"/>
+					<option type="bool" default_value="false" name="RBL_mex_cooking" title_id="RBL_mex_cooking_id" desc_id="RBL_mex_cooking_desc"/>
+					<option type="bool" default_value="false" name="RBL_spa" title_id="RBL_spa_id" desc_id="RBL_spa_desc"/>
+					<option type="bool" default_value="false" name="RBL_brb" title_id="RBL_brb_id" desc_id="RBL_brb_desc"/>
+					<option type="bool" default_value="false" name="RBL_rat" title_id="RBL_rat_id" desc_id="RBL_rat_desc"/>
+					<option type="bool" default_value="false" name="RBL_pal" title_id="RBL_pal_id" desc_id="RBL_pal_desc"/>
+					<option type="bool" default_value="false" name="RBL_hvh" title_id="RBL_hvh_id" desc_id="RBL_hvh_desc"/>
+					<option type="bool" default_value="false" name="RBL_election_day_3" title_id="RBL_election_day_3_id" desc_id="RBL_election_day_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_cafe_day" title_id="RBL_escape_cafe_day_id" desc_id="RBL_escape_cafe_day_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_cafe" title_id="RBL_escape_cafe_id" desc_id="RBL_escape_cafe_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_garage" title_id="RBL_escape_garage_id" desc_id="RBL_escape_garage_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_overpass" title_id="RBL_escape_overpass_id" desc_id="RBL_escape_overpass_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_park_day" title_id="RBL_escape_park_day_id" desc_id="RBL_escape_park_day_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_park" title_id="RBL_escape_park_id" desc_id="RBL_escape_park_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_street" title_id="RBL_escape_street_id" desc_id="RBL_escape_street_desc"/>
+					<option type="bool" default_value="false" name="RBL_firestarter_1" title_id="RBL_firestarter_1_id" desc_id="RBL_firestarter_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_peta" title_id="RBL_peta_id" desc_id="RBL_peta_desc"/>
+					<option type="bool" default_value="false" name="RBL_peta2" title_id="RBL_peta2_id" desc_id="RBL_peta2_desc"/>
+					<option type="bool" default_value="false" name="RBL_glace" title_id="RBL_glace_id" desc_id="RBL_glace_desc"/>
+					<option type="bool" default_value="false" name="RBL_run" title_id="RBL_run_id" desc_id="RBL_run_desc"/>
+					<option type="bool" default_value="false" name="RBL_bph" title_id="RBL_bph_id" desc_id="RBL_bph_desc"/>
+					<option type="bool" default_value="false" name="RBL_des" title_id="RBL_des_id" desc_id="RBL_des_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_red2" title_id="RBL_skm_red2_id" desc_id="RBL_skm_red2_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_cas" title_id="RBL_skm_cas_id" desc_id="RBL_skm_cas_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_run" title_id="RBL_skm_run_id" desc_id="RBL_skm_run_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_mallcrasher" title_id="RBL_skm_mallcrasher_id" desc_id="RBL_skm_mallcrasher_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_bex" title_id="RBL_skm_bex_id" desc_id="RBL_skm_bex_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_arena" title_id="RBL_skm_arena_id" desc_id="RBL_skm_arena_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_big2" title_id="RBL_skm_big2_id" desc_id="RBL_skm_big2_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_mus" title_id="RBL_skm_mus_id" desc_id="RBL_skm_mus_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_watchdogs_stage2" title_id="RBL_skm_watchdogs_stage2_id" desc_id="RBL_skm_watchdogs_stage2_desc"/>
+					<option type="bool" default_value="false" name="RBL_mia_1" title_id="RBL_mia_1_id" desc_id="RBL_mia_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_mia_2" title_id="RBL_mia_2_id" desc_id="RBL_mia_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_hox_1" title_id="RBL_hox_1_id" desc_id="RBL_hox_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_hox_2" title_id="RBL_hox_2_id" desc_id="RBL_hox_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_nail" title_id="RBL_nail_id" desc_id="RBL_nail_desc"/>
+					<option type="bool" default_value="false" name="RBL_shoutout_raid" title_id="RBL_shoutout_raid_id" desc_id="RBL_shoutout_raid_desc"/>
+					<option type="bool" default_value="false" name="RBL_nmh" title_id="RBL_nmh_id" desc_id="RBL_nmh_desc"/>
+					<option type="bool" default_value="false" name="RBL_flat" title_id="RBL_flat_id" desc_id="RBL_flat_desc"/>
+					<option type="bool" default_value="false" name="RBL_help" title_id="RBL_help_id" desc_id="RBL_help_desc"/>
+					<option type="bool" default_value="false" name="RBL_alex_1" title_id="RBL_alex_1_id" desc_id="RBL_alex_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_alex_2" title_id="RBL_alex_2_id" desc_id="RBL_alex_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_alex_3" title_id="RBL_alex_3_id" desc_id="RBL_alex_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_rvd_1" title_id="RBL_rvd_1_id" desc_id="RBL_rvd_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_rvd_2" title_id="RBL_rvd_2_id" desc_id="RBL_rvd_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_haunted" title_id="RBL_haunted_id" desc_id="RBL_haunted_desc"/>
+					<option type="bool" default_value="false" name="RBL_chill_combat" title_id="RBL_chill_combat_id" desc_id="RBL_chill_combat_desc"/>
+					<option type="bool" default_value="false" name="RBL_cane" title_id="RBL_cane_id" desc_id="RBL_cane_desc"/>
+					<option type="bool" default_value="false" name="RBL_dinner" title_id="RBL_dinner_id" desc_id="RBL_dinner_desc"/>
+					<option type="bool" default_value="false" name="RBL_moon" title_id="RBL_moon_id" desc_id="RBL_moon_desc"/>
+					<option type="bool" default_value="false" name="RBL_born" title_id="RBL_born_id" desc_id="RBL_born_desc"/>
+					<option type="bool" default_value="false" name="RBL_chew" title_id="RBL_chew_id" desc_id="RBL_chew_desc"/>
+					<option type="bool" default_value="false" name="RBL_crojob2_d" title_id="RBL_crojob2_d_id" desc_id="RBL_crojob2_d_desc"/>
+					<option type="bool" default_value="false" name="RBL_crojob2_n" title_id="RBL_crojob2_n_id" desc_id="RBL_crojob2_n_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_cro" title_id="RBL_arm_cro_id" desc_id="RBL_arm_cro_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_hcm" title_id="RBL_arm_hcm_id" desc_id="RBL_arm_hcm_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_fac" title_id="RBL_arm_fac_id" desc_id="RBL_arm_fac_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_par" title_id="RBL_arm_par_id" desc_id="RBL_arm_par_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_und" title_id="RBL_arm_und_id" desc_id="RBL_arm_und_desc"/>
+					<option type="bool" default_value="false" name="RBL_man" title_id="RBL_man_id" desc_id="RBL_man_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_1_night" title_id="RBL_watchdogs_1_night_id" desc_id="RBL_watchdogs_1_night_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_1" title_id="RBL_watchdogs_1_id" desc_id="RBL_watchdogs_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_2" title_id="RBL_watchdogs_2_id" desc_id="RBL_watchdogs_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_2_day" title_id="RBL_watchdogs_2_day_id" desc_id="RBL_watchdogs_2_day_desc"/>
+					<option type="bool" default_value="false" name="RBL_pines" title_id="RBL_pines_id" desc_id="RBL_pines_desc"/>
+				</option_group>
+			</option_group>
+			<!-- Stealth Options -->
+			<option_group name="ADAHStealthOptions" title_id="ADAHStealthOptions_id">
+				<button name="ADAHStealthHeader" title_id="ADAHStealthHeader_id" index="1"/>
+				<option_group name="ADAHStealthContactBlacklist" title_id="ADAHContactBlacklist_id">
+					<button name="ADAHContactHeader" title_id="ADAHContactHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_bain_stealth" title_id="RBL_bain_id"/>
+					<option type="bool" default_value="false" name="RBL_blaine_stealth" title_id="RBL_blaine_id"/>
+					<option type="bool" default_value="false" name="RBL_classics_stealth" title_id="RBL_classics_id"/>
+					<option type="bool" default_value="false" name="RBL_mcshay_stealth" title_id="RBL_mcshay_id"/>
+					<option type="bool" default_value="false" name="RBL_hector_stealth" title_id="RBL_hector_id"/>
+					<option type="bool" default_value="false" name="RBL_jimmy_stealth" title_id="RBL_jimmy_id"/>
+					<option type="bool" default_value="false" name="RBL_jiu_stealth" title_id="RBL_jiu_id"/>
+					<option type="bool" default_value="false" name="RBL_locke_stealth" title_id="RBL_locke_id"/>
+					<option type="bool" default_value="false" name="RBL_shayu_stealth" title_id="RBL_shayu_id"/>
+					<option type="bool" default_value="false" name="RBL_butcher_stealth" title_id="RBL_butcher_id"/>
+					<option type="bool" default_value="false" name="RBL_continental_stealth" title_id="RBL_continental_id"/>
+					<option type="bool" default_value="false" name="RBL_dentist_stealth" title_id="RBL_dentist_id"/>
+					<option type="bool" default_value="false" name="RBL_elephant_stealth" title_id="RBL_elephant_id"/>
+					<option type="bool" default_value="false" name="RBL_vlad_stealth" title_id="RBL_vlad_id"/>
+				</option_group>
+				
+				<option_group name="ADAHStealthTypeBlacklist" title_id="ADAHTypeBlacklist_id">
+					<button name="ADAHTypeHeader" title_id="ADAHTypeHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_stealth_stealth" title_id="RBL_stealth_id"/>
+					<option type="bool" default_value="false" name="RBL_stealthable_stealth" title_id="RBL_stealthable_id"/>
+					<option type="bool" default_value="true" name="RBL_loud_stealth" title_id="RBL_loud_id"/>
+					<divider name="ADAHButtonDivider" size="18"/>
+					<button name="ADAHSubtypeHeader" title_id="ADAHSubtypeHeader_id" index="1"/>
+					<option type="bool" default_value="true" name="RBL_holdout_stealth" title_id="RBL_holdout_id"/>
+					<option type="bool" default_value="true" name="RBL_events_stealth" title_id="RBL_events_id"/>
+					<option type="bool" default_value="false" name="RBL_escapes_stealth" title_id="RBL_escapes_id"/>
+					<option type="bool" default_value="false" name="RBL_transport_stealth" title_id="RBL_transport_id"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_stealth" title_id="RBL_branchbank_id"/>
+					<option type="bool" default_value="true" name="RBL_trades_stealth" title_id="RBL_trades_id"/>
+					<!-- Will need to find average time to complete for each heist then make lists later on. -->
+					<!-- <option type="bool" default_value="false" name="RBL_short_stealth" title_id="RBL_short_id"/> -->
+					<!-- <option type="bool" default_value="false" name="RBL_medium_stealth" title_id="RBL_medium_id"/> -->
+					<!-- <option type="bool" default_value="false" name="RBL_long_stealth" title_id="RBL_long_id"/> -->
+				</option_group>
+				
+				<option_group name="ADAHSingleStealthBlacklistStealth" title_id="ADAHSingleStealthBlacklist_id">
+					<button name="ADAHDayStealthHeader" title_id="ADAHDayStealthHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_tag_stealth" title_id="RBL_tag_id" desc_id="RBL_tag_desc"/>
+					<option type="bool" default_value="false" name="RBL_cage_stealth" title_id="RBL_cage_id" desc_id="RBL_cage_desc"/>
+					<option type="bool" default_value="false" name="RBL_dark_stealth" title_id="RBL_dark_id" desc_id="RBL_dark_desc"/>
+					<option type="bool" default_value="false" name="RBL_kosugi_stealth" title_id="RBL_kosugi_id" desc_id="RBL_kosugi_desc"/>
+					<option type="bool" default_value="false" name="RBL_fish_stealth" title_id="RBL_fish_id" desc_id="RBL_fish_desc"/>
+				</option_group>
+				
+				<option_group name="ADAHSingleStealthableBlacklistStealth" title_id="ADAHSingleStealthableBlacklist_id">
+					<button name="ADAHDayStealthableHeader" title_id="ADAHDayStealthableHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_gallery_stealth" title_id="RBL_gallery_id" desc_id="RBL_gallery_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_cash_stealth" title_id="RBL_branchbank_cash_id" desc_id="RBL_branchbank_cash_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_deposit_stealth" title_id="RBL_branchbank_deposit_id" desc_id="RBL_branchbank_deposit_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_gold_stealth" title_id="RBL_branchbank_gold_id" desc_id="RBL_branchbank_gold_desc"/>
+					<option type="bool" default_value="false" name="RBL_branchbank_random_stealth" title_id="RBL_branchbank_random_id" desc_id="RBL_branchbank_random_desc"/>
+					<option type="bool" default_value="false" name="RBL_welcome_to_the_jungle_1_night_stealth" title_id="RBL_welcome_to_the_jungle_1_night_id" desc_id="RBL_welcome_to_the_jungle_1_night_desc"/>
+					<option type="bool" default_value="false" name="RBL_welcome_to_the_jungle_1_stealth" title_id="RBL_welcome_to_the_jungle_1_id" desc_id="RBL_welcome_to_the_jungle_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_chca_stealth" title_id="RBL_chca_id" desc_id="RBL_chca_desc"/>
+					<option type="bool" default_value="false" name="RBL_mex_stealth" title_id="RBL_mex_id" desc_id="RBL_mex_desc"/>
+					<option type="bool" default_value="false" name="RBL_pex_stealth" title_id="RBL_pex_id" desc_id="RBL_pex_desc"/>
+					<option type="bool" default_value="false" name="RBL_fex_stealth" title_id="RBL_fex_id" desc_id="RBL_fex_desc"/>
+					<option type="bool" default_value="false" name="RBL_deep_stealth" title_id="RBL_deep_id" desc_id="RBL_deep_desc"/>
+					<option type="bool" default_value="false" name="RBL_dah_stealth" title_id="RBL_dah_id" desc_id="RBL_dah_desc"/>
+					<option type="bool" default_value="false" name="RBL_family_stealth" title_id="RBL_family_id" desc_id="RBL_family_desc"/>
+					<option type="bool" default_value="false" name="RBL_chas_stealth" title_id="RBL_chas_id" desc_id="RBL_chas_desc"/>
+					<option type="bool" default_value="false" name="RBL_election_day_1_stealth" title_id="RBL_election_day_1_id" desc_id="RBL_election_day_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_election_day_2_stealth" title_id="RBL_election_day_2_id" desc_id="RBL_election_day_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_firestarter_2_stealth" title_id="RBL_firestarter_2_id" desc_id="RBL_firestarter_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_firestarter_3_stealth" title_id="RBL_firestarter_3_id" desc_id="RBL_firestarter_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_red2_stealth" title_id="RBL_red2_id" desc_id="RBL_red2_desc"/>
+					<option type="bool" default_value="false" name="RBL_four_stores_stealth" title_id="RBL_four_stores_id" desc_id="RBL_four_stores_desc"/>
+					<option type="bool" default_value="false" name="RBL_framing_frame_1_stealth" title_id="RBL_framing_frame_1_id" desc_id="RBL_framing_frame_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_framing_frame_2_stealth" title_id="RBL_framing_frame_2_id" desc_id="RBL_framing_frame_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_framing_frame_3_stealth" title_id="RBL_framing_frame_3_id" desc_id="RBL_framing_frame_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_roberts_stealth" title_id="RBL_roberts_id" desc_id="RBL_roberts_desc"/>
+					<option type="bool" default_value="false" name="RBL_kenaz_stealth" title_id="RBL_kenaz_id" desc_id="RBL_kenaz_desc"/>
+					<option type="bool" default_value="false" name="RBL_corp_stealth" title_id="RBL_corp_id" desc_id="RBL_corp_desc"/>
+					<option type="bool" default_value="false" name="RBL_hox_3_stealth" title_id="RBL_hox_3_id" desc_id="RBL_hox_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_jewelry_store_stealth" title_id="RBL_jewelry_store_id" desc_id="RBL_jewelry_store_desc"/>
+					<option type="bool" default_value="false" name="RBL_trai_stealth" title_id="RBL_trai_id" desc_id="RBL_trai_desc"/>
+					<option type="bool" default_value="true" name="RBL_mallcrasher_stealth" title_id="RBL_mallcrasher_id" desc_id="RBL_mallcrasher_desc"/>
+					<option type="bool" default_value="false" name="RBL_ranc_stealth" title_id="RBL_ranc_id" desc_id="RBL_ranc_desc"/>
+					<option type="bool" default_value="false" name="RBL_pent_stealth" title_id="RBL_pent_id" desc_id="RBL_pent_desc"/>
+					<option type="bool" default_value="false" name="RBL_nightclub_stealth" title_id="RBL_nightclub_id" desc_id="RBL_nightclub_desc"/>
+					<option type="bool" default_value="false" name="RBL_bex_stealth" title_id="RBL_bex_id" desc_id="RBL_bex_desc"/>
+					<option type="bool" default_value="false" name="RBL_friend_stealth" title_id="RBL_friend_id" desc_id="RBL_friend_desc"/>
+					<option type="bool" default_value="false" name="RBL_sah_stealth" title_id="RBL_sah_id" desc_id="RBL_sah_desc"/>
+					<option type="bool" default_value="false" name="RBL_arena_stealth" title_id="RBL_arena_id" desc_id="RBL_arena_desc"/>
+					<option type="bool" default_value="false" name="RBL_big_stealth" title_id="RBL_big_id" desc_id="RBL_big_desc"/>
+					<option type="bool" default_value="false" name="RBL_crojob1_stealth" title_id="RBL_crojob1_id" desc_id="RBL_crojob1_desc"/>
+					<option type="bool" default_value="false" name="RBL_mus_stealth" title_id="RBL_mus_id" desc_id="RBL_mus_desc"/>
+					<option type="bool" default_value="false" name="RBL_sand_stealth" title_id="RBL_sand_id" desc_id="RBL_sand_desc"/>
+					<option type="bool" default_value="false" name="RBL_vit_stealth" title_id="RBL_vit_id" desc_id="RBL_vit_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_for_stealth" title_id="RBL_arm_for_id" desc_id="RBL_arm_for_desc"/>
+					<option type="bool" default_value="false" name="RBL_ukrainian_job_stealth" title_id="RBL_ukrainian_job_id" desc_id="RBL_ukrainian_job_desc"/>
+				</option_group>
+				
+				<option_group name="ADAHSingleLoudBlacklistStealth" title_id="ADAHSingleLoudBlacklist_id">
+					<button name="ADAHDayLoudHeader" title_id="ADAHDayLoudHeader_id" index="1"/>
+					<option type="bool" default_value="false" name="RBL_jolly_stealth" title_id="RBL_jolly_id" desc_id="RBL_jolly_desc"/>
+					<option type="bool" default_value="false" name="RBL_wwh_stealth" title_id="RBL_wwh_id" desc_id="RBL_wwh_desc"/>
+					<option type="bool" default_value="false" name="RBL_pbr_stealth" title_id="RBL_pbr_id" desc_id="RBL_pbr_desc"/>
+					<option type="bool" default_value="false" name="RBL_welcome_to_the_jungle_2_stealth" title_id="RBL_welcome_to_the_jungle_2_id" desc_id="RBL_welcome_to_the_jungle_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_pbr2_stealth" title_id="RBL_pbr2_id" desc_id="RBL_pbr2_desc"/>
+					<option type="bool" default_value="false" name="RBL_mad_stealth" title_id="RBL_mad_id" desc_id="RBL_mad_desc"/>
+					<option type="bool" default_value="false" name="RBL_mex_cooking_stealth" title_id="RBL_mex_cooking_id" desc_id="RBL_mex_cooking_desc"/>
+					<option type="bool" default_value="false" name="RBL_spa_stealth" title_id="RBL_spa_id" desc_id="RBL_spa_desc"/>
+					<option type="bool" default_value="false" name="RBL_brb_stealth" title_id="RBL_brb_id" desc_id="RBL_brb_desc"/>
+					<option type="bool" default_value="false" name="RBL_rat_stealth" title_id="RBL_rat_id" desc_id="RBL_rat_desc"/>
+					<option type="bool" default_value="false" name="RBL_pal_stealth" title_id="RBL_pal_id" desc_id="RBL_pal_desc"/>
+					<option type="bool" default_value="false" name="RBL_hvh_stealth" title_id="RBL_hvh_id" desc_id="RBL_hvh_desc"/>
+					<option type="bool" default_value="false" name="RBL_election_day_3_stealth" title_id="RBL_election_day_3_id" desc_id="RBL_election_day_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_cafe_day_stealth" title_id="RBL_escape_cafe_day_id" desc_id="RBL_escape_cafe_day_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_cafe_stealth" title_id="RBL_escape_cafe_id" desc_id="RBL_escape_cafe_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_garage_stealth" title_id="RBL_escape_garage_id" desc_id="RBL_escape_garage_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_overpass_stealth" title_id="RBL_escape_overpass_id" desc_id="RBL_escape_overpass_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_park_day_stealth" title_id="RBL_escape_park_day_id" desc_id="RBL_escape_park_day_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_park_stealth" title_id="RBL_escape_park_id" desc_id="RBL_escape_park_desc"/>
+					<option type="bool" default_value="false" name="RBL_escape_street_stealth" title_id="RBL_escape_street_id" desc_id="RBL_escape_street_desc"/>
+					<option type="bool" default_value="false" name="RBL_firestarter_1_stealth" title_id="RBL_firestarter_1_id" desc_id="RBL_firestarter_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_peta_stealth" title_id="RBL_peta_id" desc_id="RBL_peta_desc"/>
+					<option type="bool" default_value="false" name="RBL_peta2_stealth" title_id="RBL_peta2_id" desc_id="RBL_peta2_desc"/>
+					<option type="bool" default_value="false" name="RBL_glace_stealth" title_id="RBL_glace_id" desc_id="RBL_glace_desc"/>
+					<option type="bool" default_value="false" name="RBL_run_stealth" title_id="RBL_run_id" desc_id="RBL_run_desc"/>
+					<option type="bool" default_value="false" name="RBL_bph_stealth" title_id="RBL_bph_id" desc_id="RBL_bph_desc"/>
+					<option type="bool" default_value="false" name="RBL_des_stealth" title_id="RBL_des_id" desc_id="RBL_des_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_red2_stealth" title_id="RBL_skm_red2_id" desc_id="RBL_skm_red2_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_cas_stealth" title_id="RBL_skm_cas_id" desc_id="RBL_skm_cas_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_run_stealth" title_id="RBL_skm_run_id" desc_id="RBL_skm_run_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_mallcrasher_stealth" title_id="RBL_skm_mallcrasher_id" desc_id="RBL_skm_mallcrasher_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_bex_stealth" title_id="RBL_skm_bex_id" desc_id="RBL_skm_bex_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_arena_stealth" title_id="RBL_skm_arena_id" desc_id="RBL_skm_arena_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_big2_stealth" title_id="RBL_skm_big2_id" desc_id="RBL_skm_big2_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_mus_stealth" title_id="RBL_skm_mus_id" desc_id="RBL_skm_mus_desc"/>
+					<option type="bool" default_value="false" name="RBL_skm_watchdogs_stage2_stealth" title_id="RBL_skm_watchdogs_stage2_id" desc_id="RBL_skm_watchdogs_stage2_desc"/>
+					<option type="bool" default_value="false" name="RBL_mia_1_stealth" title_id="RBL_mia_1_id" desc_id="RBL_mia_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_mia_2_stealth" title_id="RBL_mia_2_id" desc_id="RBL_mia_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_hox_1_stealth" title_id="RBL_hox_1_id" desc_id="RBL_hox_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_hox_2_stealth" title_id="RBL_hox_2_id" desc_id="RBL_hox_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_nail_stealth" title_id="RBL_nail_id" desc_id="RBL_nail_desc"/>
+					<option type="bool" default_value="false" name="RBL_shoutout_raid_stealth" title_id="RBL_shoutout_raid_id" desc_id="RBL_shoutout_raid_desc"/>
+					<option type="bool" default_value="false" name="RBL_nmh_stealth" title_id="RBL_nmh_id" desc_id="RBL_nmh_desc"/>
+					<option type="bool" default_value="false" name="RBL_flat_stealth" title_id="RBL_flat_id" desc_id="RBL_flat_desc"/>
+					<option type="bool" default_value="false" name="RBL_help_stealth" title_id="RBL_help_id" desc_id="RBL_help_desc"/>
+					<option type="bool" default_value="false" name="RBL_alex_1_stealth" title_id="RBL_alex_1_id" desc_id="RBL_alex_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_alex_2_stealth" title_id="RBL_alex_2_id" desc_id="RBL_alex_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_alex_3_stealth" title_id="RBL_alex_3_id" desc_id="RBL_alex_3_desc"/>
+					<option type="bool" default_value="false" name="RBL_rvd_1_stealth" title_id="RBL_rvd_1_id" desc_id="RBL_rvd_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_rvd_2_stealth" title_id="RBL_rvd_2_id" desc_id="RBL_rvd_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_haunted_stealth" title_id="RBL_haunted_id" desc_id="RBL_haunted_desc"/>
+					<option type="bool" default_value="false" name="RBL_chill_combat_stealth" title_id="RBL_chill_combat_id" desc_id="RBL_chill_combat_desc"/>
+					<option type="bool" default_value="false" name="RBL_cane_stealth" title_id="RBL_cane_id" desc_id="RBL_cane_desc"/>
+					<option type="bool" default_value="false" name="RBL_dinner_stealth" title_id="RBL_dinner_id" desc_id="RBL_dinner_desc"/>
+					<option type="bool" default_value="false" name="RBL_moon_stealth" title_id="RBL_moon_id" desc_id="RBL_moon_desc"/>
+					<option type="bool" default_value="false" name="RBL_born_stealth" title_id="RBL_born_id" desc_id="RBL_born_desc"/>
+					<option type="bool" default_value="false" name="RBL_chew_stealth" title_id="RBL_chew_id" desc_id="RBL_chew_desc"/>
+					<option type="bool" default_value="false" name="RBL_crojob2_d_stealth" title_id="RBL_crojob2_d_id" desc_id="RBL_crojob2_d_desc"/>
+					<option type="bool" default_value="false" name="RBL_crojob2_n_stealth" title_id="RBL_crojob2_n_id" desc_id="RBL_crojob2_n_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_cro_stealth" title_id="RBL_arm_cro_id" desc_id="RBL_arm_cro_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_hcm_stealth" title_id="RBL_arm_hcm_id" desc_id="RBL_arm_hcm_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_fac_stealth" title_id="RBL_arm_fac_id" desc_id="RBL_arm_fac_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_par_stealth" title_id="RBL_arm_par_id" desc_id="RBL_arm_par_desc"/>
+					<option type="bool" default_value="false" name="RBL_arm_und_stealth" title_id="RBL_arm_und_id" desc_id="RBL_arm_und_desc"/>
+					<option type="bool" default_value="false" name="RBL_man_stealth" title_id="RBL_man_id" desc_id="RBL_man_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_1_night_stealth" title_id="RBL_watchdogs_1_night_id" desc_id="RBL_watchdogs_1_night_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_1_stealth" title_id="RBL_watchdogs_1_id" desc_id="RBL_watchdogs_1_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_2_stealth" title_id="RBL_watchdogs_2_id" desc_id="RBL_watchdogs_2_desc"/>
+					<option type="bool" default_value="false" name="RBL_watchdogs_2_day_stealth" title_id="RBL_watchdogs_2_day_id" desc_id="RBL_watchdogs_2_day_desc"/>
+					<option type="bool" default_value="false" name="RBL_pines_stealth" title_id="RBL_pines_id" desc_id="RBL_pines_desc"/>
+				</option_group>
+			</option_group>
+			<divider name="ADAHButtonDivider" size="18"/>
+			<button name="ADAHResetRandomBlacklist" title_id="ADAHResetRandomBlacklist_id" clicked="self:reset_random_blacklist_call_back"/>
+			<button name="ADAHResetStealthBlacklist" title_id="ADAHResetStealthBlacklist_id" clicked="self:reset_stealth_blacklist_call_back"/>
+			<button name="ADAHDefaultAllOptions" title_id="ADAHDefaultAllOptions_id" clicked="self:reset_all_options_call_back"/>
+			<button name="ADAHApplyBlacklist" title_id="ADAHApplyBlacklist_id" clicked="self:apply_blacklist_call_back"/>
+        </options>
+    </Options>
+</mod>

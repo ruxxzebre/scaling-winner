@@ -1,4 +1,4 @@
-# PAYDAY 2 Modpack
+# PAYDAY 2 Modpack (Scaling Winner)
 
 A curated collection of mods for PAYDAY 2.
 

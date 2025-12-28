@@ -7,6 +7,7 @@
 
 # But ignore logs and saves
 mods/logs/
+mods/downloads/
 mods/saves/*
 !mods/saves/AdvancedCrosshair.txt
 

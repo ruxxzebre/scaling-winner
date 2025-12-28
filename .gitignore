@@ -1,0 +1,19 @@
+# Ignore everything
+*
+
+# Unignore mods folder
+!mods/
+!mods/**
+
+# But ignore logs and saves
+mods/logs/
+mods/saves/*
+!mods/saves/AdvancedCrosshair.txt
+
+# Unignore assets/mod_overrides folder
+!assets/
+!assets/mod_overrides/
+!assets/mod_overrides/**
+!WSOCK32.dll
+!README.md
+!.gitignore

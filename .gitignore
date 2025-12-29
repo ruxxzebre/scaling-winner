@@ -11,6 +11,7 @@ mods/downloads/
 mods/saves/*
 mods/ModpackUpdater/temp_*.txt
 mods/ModpackUpdater/*.bat
+mods/ModpackUpdater/version_cache.json
 !mods/saves/AdvancedCrosshair.txt
 
 # Unignore assets/mod_overrides folder

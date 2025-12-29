@@ -1,14 +1,87 @@
 -- Modpack Updater
 
 ModpackUpdater = ModpackUpdater or {}
-ModpackUpdater._mod_path = ModPath -- Capture at load time
+ModpackUpdater._mod_path = ModPath
 ModpackUpdater.repo_path = ModpackUpdater._mod_path .. "../../"
-ModpackUpdater.menu_id = "modpack_updater_menu"
 
--- TODO: disable
--- Cleanup old batch files on load
--- os.remove(ModpackUpdater._mod_path .. "check_version.bat")
--- os.remove(ModpackUpdater._mod_path .. "update_modpack.bat")
+-- Helper: trim whitespace
+local function trim(s)
+	return s and s:match("^%s*(.-)%s*$") or ""
+end
+
+-- Helper: run git command and capture output
+local function run_git(args)
+	local repo = Path:Normalize(ModpackUpdater.repo_path)
+	local cmd = string.format('cd /d "%s" && git %s 2>&1', repo, args)
+	local handle = io.popen(cmd)
+	if not handle then
+		return nil, "Failed to execute command"
+	end
+	local result = handle:read("*a")
+	local success, exit_type, code = handle:close()
+	if not success then
+		return result, string.format("Command failed (exit %s)", tostring(code or "?"))
+	end
+	return result, nil
+end
+
+-- Helper: show dialog
+local function show_dialog(title, message)
+	BeardLib.Managers.Dialog:Simple():Show({
+		title = title,
+		message = message,
+		no = false
+	})
+end
+
+-- Check version - shows dialog with version info
+function MenuCallbackHandler:ModpackUpdater_CheckVersion()
+	local version, ver_err = run_git("rev-parse --short=4 HEAD")
+	local commit, com_err = run_git("log -1 --format=%s")
+	local status, stat_err = run_git("status --short")
+
+	if ver_err then
+		show_dialog("Error", "Failed to get version:\n" .. (version or ver_err))
+		return
+	end
+
+	local changes = trim(status)
+	if changes == "" then
+		changes = "(no local changes)"
+	end
+
+	local msg = string.format(
+		"Version: %s\nCommit: %s\n\nLocal Changes:\n%s",
+		trim(version),
+		trim(commit),
+		changes
+	)
+
+	show_dialog("Modpack Version", msg)
+end
+
+-- Update modpack - runs git pull and shows result
+function MenuCallbackHandler:ModpackUpdater_Update()
+	local pull_result, pull_err = run_git("pull")
+
+	if pull_err then
+		show_dialog("Update Failed", "Git pull failed:\n\n" .. (pull_result or pull_err))
+		return
+	end
+
+	-- Get new version info
+	local version = trim(run_git("rev-parse --short=4 HEAD") or "?")
+	local commit = trim(run_git("log -1 --format=%s") or "?")
+
+	local msg = string.format(
+		"Pull Result:\n%s\n\nNew Version: %s\nCommit: %s\n\nRestart game to apply changes.",
+		trim(pull_result),
+		version,
+		commit
+	)
+
+	show_dialog("Update Complete", msg)
+end
 
 -- Localization
 Hooks:Add("LocalizationManagerPostInit", "ModpackUpdater_Loc", function(loc)
@@ -18,60 +91,9 @@ Hooks:Add("LocalizationManagerPostInit", "ModpackUpdater_Loc", function(loc)
 	})
 end)
 
--- Check version - opens terminal showing version info
-function MenuCallbackHandler:ModpackUpdater_CheckVersion()
-	local repo = ModpackUpdater.repo_path:gsub("/", "\\")
-	local bat = ModpackUpdater._mod_path .. "check_version.bat"
-	local f = io.open(bat, "w")
-	f:write("@echo off\n")
-	f:write('cd /d "' .. repo .. '"\n')
-	f:write("echo.\n")
-	f:write("echo === MODPACK VERSION ===\n")
-	f:write("echo.\n")
-	f:write("echo Version:\n")
-	f:write("git rev-parse --short=4 HEAD\n")
-	f:write("echo.\n")
-	f:write("echo Commit:\n")
-	f:write("git log -1 --format=%s\n")
-	f:write("echo.\n")
-	f:write("echo === LOCAL CHANGES ===\n")
-	f:write("git status --short\n")
-	f:write("echo.\n")
-	f:write("pause\n")
-	f:close()
-	os.execute('start cmd /c "' .. bat .. '"')
-end
-
--- Update modpack - opens terminal and runs git pull
-function MenuCallbackHandler:ModpackUpdater_Update()
-	local repo = ModpackUpdater.repo_path:gsub("/", "\\")
-	local bat = ModpackUpdater._mod_path .. "update_modpack.bat"
-	local f = io.open(bat, "w")
-	f:write("@echo off\n")
-	f:write('cd /d "' .. repo .. '"\n')
-	f:write("echo.\n")
-	f:write("echo === UPDATING MODPACK ===\n")
-	f:write("echo.\n")
-	f:write("git pull\n")
-	f:write("echo.\n")
-	f:write("echo === NEW VERSION ===\n")
-	f:write("echo.\n")
-	f:write("echo Version:\n")
-	f:write("git rev-parse --short=4 HEAD\n")
-	f:write("echo.\n")
-	f:write("echo Commit:\n")
-	f:write("git log -1 --format=%s\n")
-	f:write("echo.\n")
-	f:write("echo Update complete. Restart game to apply changes.\n")
-	f:write("echo.\n")
-	f:write("pause\n")
-	f:close()
-	os.execute('start cmd /c "' .. bat .. '"')
-end
-
 -- Setup menu
 Hooks:Add("MenuManagerSetupCustomMenus", "ModpackUpdater_SetupMenus", function(menu_manager, nodes)
-	MenuHelper:NewMenu(ModpackUpdater.menu_id)
+	MenuHelper:NewMenu("modpack_updater_menu")
 end)
 
 Hooks:Add("MenuManagerPopulateCustomMenus", "ModpackUpdater_PopulateMenus", function(menu_manager, nodes)
@@ -80,7 +102,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "ModpackUpdater_PopulateMenus", func
 		title = "Check Version",
 		desc = "Show current modpack version and local changes",
 		callback = "ModpackUpdater_CheckVersion",
-		menu_id = ModpackUpdater.menu_id,
+		menu_id = "modpack_updater_menu",
 		priority = 2,
 		localized = false
 	})
@@ -90,13 +112,13 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "ModpackUpdater_PopulateMenus", func
 		title = "Update Modpack",
 		desc = "Pull latest changes from git repository",
 		callback = "ModpackUpdater_Update",
-		menu_id = ModpackUpdater.menu_id,
+		menu_id = "modpack_updater_menu",
 		priority = 1,
 		localized = false
 	})
 end)
 
 Hooks:Add("MenuManagerBuildCustomMenus", "ModpackUpdater_BuildMenus", function(menu_manager, nodes)
-	nodes[ModpackUpdater.menu_id] = MenuHelper:BuildMenu(ModpackUpdater.menu_id)
-	MenuHelper:AddMenuItem(nodes.options, ModpackUpdater.menu_id, "modpack_updater_title", "modpack_updater_desc")
+	nodes["modpack_updater_menu"] = MenuHelper:BuildMenu("modpack_updater_menu")
+	MenuHelper:AddMenuItem(nodes.options, "modpack_updater_menu", "modpack_updater_title", "modpack_updater_desc")
 end)

@@ -1,4 +1,4 @@
--- Modpack Updater
+-- Modpack Updater mod
 
 ModpackUpdater = ModpackUpdater or {}
 ModpackUpdater._mod_path = ModPath

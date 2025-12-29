@@ -5,8 +5,7 @@ ModpackUpdater._mod_path = ModPath -- Capture at load time
 ModpackUpdater.repo_path = ModpackUpdater._mod_path .. "../../"
 ModpackUpdater.menu_id = "modpack_updater_menu"
 
--- TODO: disable
--- Cleanup old batch files on load
+-- TODO: Cleanup old batch files on load
 -- os.remove(ModpackUpdater._mod_path .. "check_version.bat")
 -- os.remove(ModpackUpdater._mod_path .. "update_modpack.bat")
 

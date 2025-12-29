@@ -3,6 +3,7 @@
 ModpackUpdater = ModpackUpdater or {}
 ModpackUpdater._mod_path = ModPath
 ModpackUpdater.repo_path = ModpackUpdater._mod_path .. "../../"
+ModpackUpdater.cache_file = ModpackUpdater._mod_path .. "version_cache.json"
 
 -- Helper: trim whitespace
 local function trim(s)
@@ -34,33 +35,58 @@ local function show_dialog(title, message)
 	})
 end
 
--- Check version - shows dialog with version info
-function MenuCallbackHandler:ModpackUpdater_CheckVersion()
-	local version, ver_err = run_git("rev-parse --short=4 HEAD")
-	local commit, com_err = run_git("log -1 --format=%s")
-	local status, stat_err = run_git("status --short")
+-- Helper: get current version info from git
+local function get_version_info()
+	local version = trim(run_git("rev-parse --short=4 HEAD") or "")
+	local commit = trim(run_git("log -1 --format=%s") or "")
+	local date = trim(run_git("log -1 --format=%ci") or "")
+	return {
+		version = version,
+		commit = commit,
+		date = date
+	}
+end
 
-	if ver_err then
-		show_dialog("Error", "Failed to get version:\n" .. (version or ver_err))
+-- Helper: save version info to cache file
+local function save_cache(info)
+	local data = {
+		version = info.version,
+		commit = info.commit,
+		date = info.date,
+		cached_at = os.date("%Y-%m-%d %H:%M:%S")
+	}
+	FileIO:WriteScriptData(ModpackUpdater.cache_file, data, "json")
+end
+
+-- Helper: load version info from cache file
+local function load_cache()
+	if not FileIO:Exists(ModpackUpdater.cache_file) then
+		return nil
+	end
+	return FileIO:ReadScriptData(ModpackUpdater.cache_file, "json")
+end
+
+-- Check version - shows cached version info (instant, no git)
+function MenuCallbackHandler:ModpackUpdater_CheckVersion()
+	local cache = load_cache()
+
+	if not cache then
+		show_dialog("No Version Data", "No cached version info found.\n\nClick 'Update Modpack' to fetch latest version.")
 		return
 	end
 
-	local changes = trim(status)
-	if changes == "" then
-		changes = "(no local changes)"
-	end
-
 	local msg = string.format(
-		"Version: %s\nCommit: %s\n\nLocal Changes:\n%s",
-		trim(version),
-		trim(commit),
-		changes
+		"Version: %s\nCommit: %s\nDate: %s\n\nCached at: %s",
+		cache.version or "?",
+		cache.commit or "?",
+		cache.date or "?",
+		cache.cached_at or "?"
 	)
 
 	show_dialog("Modpack Version", msg)
 end
 
--- Update modpack - runs git pull and shows result
+-- Update modpack - runs git pull and regenerates cache
 function MenuCallbackHandler:ModpackUpdater_Update()
 	local pull_result, pull_err = run_git("pull")
 
@@ -69,15 +95,16 @@ function MenuCallbackHandler:ModpackUpdater_Update()
 		return
 	end
 
-	-- Get new version info
-	local version = trim(run_git("rev-parse --short=4 HEAD") or "?")
-	local commit = trim(run_git("log -1 --format=%s") or "?")
+	-- Get and cache new version info
+	local info = get_version_info()
+	save_cache(info)
 
 	local msg = string.format(
-		"Pull Result:\n%s\n\nNew Version: %s\nCommit: %s\n\nRestart game to apply changes.",
+		"Pull Result:\n%s\n\nNew Version: %s\nCommit: %s\nDate: %s\n\nRestart game to apply changes.",
 		trim(pull_result),
-		version,
-		commit
+		info.version,
+		info.commit,
+		info.date
 	)
 
 	show_dialog("Update Complete", msg)

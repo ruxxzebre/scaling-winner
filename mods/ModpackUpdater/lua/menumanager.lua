@@ -1,130 +1,102 @@
 -- Modpack Updater
--- Adds a menu on main menu to pull the latest modpack from git
 
 ModpackUpdater = ModpackUpdater or {}
-ModpackUpdater.repo_path = ModPath .. "../../"
+ModpackUpdater._mod_path = ModPath -- Capture at load time
+ModpackUpdater.repo_path = ModpackUpdater._mod_path .. "../../"
 ModpackUpdater.menu_id = "modpack_updater_menu"
 
--- Get current commit hash (first 4 chars)
-function ModpackUpdater:get_version()
-	local cmd = string.format('git -C "%s" rev-parse HEAD 2>&1', self.repo_path)
-	local handle = io.popen(cmd)
-	local result = handle:read("*a")
-	handle:close()
-	result = result:gsub("%s+", "") -- trim whitespace
-	if result and #result >= 4 then
-		return result:sub(1, 4)
-	end
-	return "????"
-end
-
--- Pull latest
-function ModpackUpdater:pull_modpack()
-	local cmd = string.format('git -C "%s" pull 2>&1', self.repo_path)
-	local handle = io.popen(cmd)
-	local result = handle:read("*a")
-	handle:close()
-
-	QuickMenu:new("Modpack Updater", result ~= "" and result or "Done", {{text = "OK", is_cancel_button = true}}, true)
-end
-
--- Check status
-function ModpackUpdater:check_status()
-	local cmd = string.format('git -C "%s" status --short 2>&1', self.repo_path)
-	local handle = io.popen(cmd)
-	local result = handle:read("*a")
-	handle:close()
-
-	local message = result ~= "" and result or "No changes detected"
-	QuickMenu:new("Git Status", message, {{text = "OK", is_cancel_button = true}}, true)
-end
-
--- Fetch and show if updates available
-function ModpackUpdater:check_updates()
-	-- Fetch first
-	local cmd = string.format('git -C "%s" fetch 2>&1', self.repo_path)
-	local handle = io.popen(cmd)
-	handle:read("*a")
-	handle:close()
-
-	-- Check difference
-	cmd = string.format('git -C "%s" log HEAD..origin/main --oneline 2>&1', self.repo_path)
-	handle = io.popen(cmd)
-	local result = handle:read("*a")
-	handle:close()
-
-	local message = result ~= "" and ("Updates available:\n" .. result) or "Already up to date!"
-	QuickMenu:new("Check Updates", message, {{text = "OK", is_cancel_button = true}}, true)
-end
-
--- Get version on load
-ModpackUpdater.version = ModpackUpdater:get_version()
+-- TODO: disable
+-- Cleanup old batch files on load
+-- os.remove(ModpackUpdater._mod_path .. "check_version.bat")
+-- os.remove(ModpackUpdater._mod_path .. "update_modpack.bat")
 
 -- Localization
 Hooks:Add("LocalizationManagerPostInit", "ModpackUpdater_Loc", function(loc)
-	LocalizationManager:add_localized_strings({
-		["modpack_updater_menu_title"] = "Modpack [" .. ModpackUpdater.version .. "]",
-		["modpack_updater_menu_desc"] = "Modpack updater menu",
-		["modpack_updater_pull_title"] = "Update Modpack",
-		["modpack_updater_pull_desc"] = "Pull latest changes from git",
-		["modpack_updater_status_title"] = "Check Local Changes",
-		["modpack_updater_status_desc"] = "Show uncommitted local changes",
-		["modpack_updater_check_title"] = "Check for Updates",
-		["modpack_updater_check_desc"] = "Fetch and check if updates are available",
+	loc:add_localized_strings({
+		modpack_updater_title = "Modpack Updater",
+		modpack_updater_desc = "Update or check modpack version"
 	})
 end)
 
--- Add callbacks
-Hooks:Add("MenuManagerInitialize", "ModpackUpdater_Init", function(menu_manager)
-	MenuCallbackHandler.modpack_updater_pull = function(self, item)
-		ModpackUpdater:pull_modpack()
-	end
-	MenuCallbackHandler.modpack_updater_status = function(self, item)
-		ModpackUpdater:check_status()
-	end
-	MenuCallbackHandler.modpack_updater_check = function(self, item)
-		ModpackUpdater:check_updates()
-	end
-end)
+-- Check version - opens terminal showing version info
+function MenuCallbackHandler:ModpackUpdater_CheckVersion()
+	local repo = ModpackUpdater.repo_path:gsub("/", "\\")
+	local bat = ModpackUpdater._mod_path .. "check_version.bat"
+	local f = io.open(bat, "w")
+	f:write("@echo off\n")
+	f:write('cd /d "' .. repo .. '"\n')
+	f:write("echo.\n")
+	f:write("echo === MODPACK VERSION ===\n")
+	f:write("echo.\n")
+	f:write("echo Version:\n")
+	f:write("git rev-parse --short=4 HEAD\n")
+	f:write("echo.\n")
+	f:write("echo Commit:\n")
+	f:write("git log -1 --format=%s\n")
+	f:write("echo.\n")
+	f:write("echo === LOCAL CHANGES ===\n")
+	f:write("git status --short\n")
+	f:write("echo.\n")
+	f:write("pause\n")
+	f:close()
+	os.execute('start cmd /c "' .. bat .. '"')
+end
 
--- Build the menu
-Hooks:Add("MenuManagerSetupCustomMenus", "ModpackUpdater_Setup", function(menu_manager, nodes)
+-- Update modpack - opens terminal and runs git pull
+function MenuCallbackHandler:ModpackUpdater_Update()
+	local repo = ModpackUpdater.repo_path:gsub("/", "\\")
+	local bat = ModpackUpdater._mod_path .. "update_modpack.bat"
+	local f = io.open(bat, "w")
+	f:write("@echo off\n")
+	f:write('cd /d "' .. repo .. '"\n')
+	f:write("echo.\n")
+	f:write("echo === UPDATING MODPACK ===\n")
+	f:write("echo.\n")
+	f:write("git pull\n")
+	f:write("echo.\n")
+	f:write("echo === NEW VERSION ===\n")
+	f:write("echo.\n")
+	f:write("echo Version:\n")
+	f:write("git rev-parse --short=4 HEAD\n")
+	f:write("echo.\n")
+	f:write("echo Commit:\n")
+	f:write("git log -1 --format=%s\n")
+	f:write("echo.\n")
+	f:write("echo Update complete. Restart game to apply changes.\n")
+	f:write("echo.\n")
+	f:write("pause\n")
+	f:close()
+	os.execute('start cmd /c "' .. bat .. '"')
+end
+
+-- Setup menu
+Hooks:Add("MenuManagerSetupCustomMenus", "ModpackUpdater_SetupMenus", function(menu_manager, nodes)
 	MenuHelper:NewMenu(ModpackUpdater.menu_id)
 end)
 
-Hooks:Add("MenuManagerPopulateCustomMenus", "ModpackUpdater_Populate", function(menu_manager, nodes)
+Hooks:Add("MenuManagerPopulateCustomMenus", "ModpackUpdater_PopulateMenus", function(menu_manager, nodes)
 	MenuHelper:AddButton({
-		id = "modpack_updater_pull_btn",
-		title = "modpack_updater_pull_title",
-		desc = "modpack_updater_pull_desc",
-		callback = "modpack_updater_pull",
+		id = "modpack_check_version",
+		title = "Check Version",
+		desc = "Show current modpack version and local changes",
+		callback = "ModpackUpdater_CheckVersion",
 		menu_id = ModpackUpdater.menu_id,
-		priority = 3
+		priority = 2,
+		localized = false
 	})
+
 	MenuHelper:AddButton({
-		id = "modpack_updater_check_btn",
-		title = "modpack_updater_check_title",
-		desc = "modpack_updater_check_desc",
-		callback = "modpack_updater_check",
+		id = "modpack_update",
+		title = "Update Modpack",
+		desc = "Pull latest changes from git repository",
+		callback = "ModpackUpdater_Update",
 		menu_id = ModpackUpdater.menu_id,
-		priority = 2
-	})
-	MenuHelper:AddButton({
-		id = "modpack_updater_status_btn",
-		title = "modpack_updater_status_title",
-		desc = "modpack_updater_status_desc",
-		callback = "modpack_updater_status",
-		menu_id = ModpackUpdater.menu_id,
-		priority = 1
+		priority = 1,
+		localized = false
 	})
 end)
 
-Hooks:Add("MenuManagerBuildCustomMenus", "ModpackUpdater_Build", function(menu_manager, nodes)
-	nodes[ModpackUpdater.menu_id] = MenuHelper:BuildMenu(ModpackUpdater.menu_id, {back_callback = "menu_back"})
-
-	-- Add menu entry to options menu
-	local options_node = nodes.options
-	if options_node then
-		MenuHelper:AddMenuItem(options_node, ModpackUpdater.menu_id, "modpack_updater_menu_title", "modpack_updater_menu_desc")
-	end
+Hooks:Add("MenuManagerBuildCustomMenus", "ModpackUpdater_BuildMenus", function(menu_manager, nodes)
+	nodes[ModpackUpdater.menu_id] = MenuHelper:BuildMenu(ModpackUpdater.menu_id)
+	MenuHelper:AddMenuItem(nodes.options, ModpackUpdater.menu_id, "modpack_updater_title", "modpack_updater_desc")
 end)

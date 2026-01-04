@@ -129,6 +129,7 @@ This repository is a collection of mods made by their respective authors. All mo
 - Tests for update scripts
 - Add options to disable optional mods like UA Grivna and The Particle Massacre
 - Add options to disable helper/time-saver mods like Math Helper and similar ones, like those which show the key cards right away or highlight correct PC to hack in big bank heist
+- Add option to hide mod options from the payday menus to prevent unnecessary configuration
 - Github Action that builds the modpack
 - Update scripts should try to detect if they're in Payday 2 folder and short circuit if not (and have a test mode that disables such flag)
 - Update scripts should try to find a Payday 2 folder in default system locations if script was executed not from Payday 2 folder, shor tciruit otherwise

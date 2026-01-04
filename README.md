@@ -129,6 +129,8 @@ This repository is a collection of mods made by their respective authors. All mo
 - Tests for update scripts
 - Add options to disable optional mods like UA Grivna and The Particle Massacre
 - Github Action that builds the modpack
+- Update scripts should try to detect if they're in Payday 2 folder and short circuit if not (and have a test mode that disables such flag)
+- Update scripts should try to find a Payday 2 folder in default system locations if script was executed not from Payday 2 folder, shor tciruit otherwise
 
 ## Other handy goodies:
 

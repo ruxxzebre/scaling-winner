@@ -2,9 +2,14 @@ const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
-function git(cmd) {
+// Prevent recursion when we push from within the hook
+if (process.env.VERSION_CACHE_RUNNING) {
+  process.exit(0);
+}
+
+function git(cmd, opts = {}) {
   try {
-    return execSync(`git ${cmd}`, { encoding: "utf8" }).trim();
+    return execSync(`git ${cmd}`, { encoding: "utf8", ...opts }).trim();
   } catch {
     return null;
   }
@@ -31,8 +36,15 @@ const newContent = JSON.stringify(cache, null, 2) + "\n";
 if (oldContent !== newContent) {
   fs.writeFileSync(cachePath, newContent);
   execSync("git add mods/ModpackUpdater/version_cache.json");
-  execSync('git commit -m "update version_cache.json"');
-  console.log("Created commit with version_cache.json:", cache.version);
-} else {
-  console.log("version_cache.json unchanged, skipping commit");
+  execSync('git commit -m "update version_cache"');
+  console.log("Created version_cache commit:", hash);
+
+  // Push with the new commit, skip hooks to prevent recursion
+  execSync("git push", {
+    env: { ...process.env, VERSION_CACHE_RUNNING: "1" },
+    stdio: "inherit"
+  });
+
+  // Exit with error to abort original push (we already pushed)
+  process.exit(1);
 }

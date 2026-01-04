@@ -5,6 +5,10 @@
 !mods/
 !mods/**
 
+# Unignore scripts folder
+!scripts/
+!scripts/**
+
 # But ignore logs and saves
 mods/logs/
 mods/downloads/
@@ -24,9 +28,5 @@ mods/ModpackUpdater/*.bat
 !README.md
 !.gitignore
 !.luarc.json
-!modpack_update.ps1
-!modpack_update.sh
 !package.json
 !lefthook.yml
-!scripts/
-!scripts/**

@@ -22,13 +22,13 @@ Run in terminal from your PAYDAY 2 folder:
 **Windows (PowerShell):**
 
 ```powershell
-iwr -Uri "https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.ps1" -UseBasicParsing | iex
+iwr -Uri "https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/scripts/modpack_update.ps1" -UseBasicParsing | iex
 ```
 
 **Linux (Proton):**
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.sh | sh
+wget -qO- https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/scripts/modpack_update.sh | sh
 ```
 
 ### Manual Installation

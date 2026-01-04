@@ -116,19 +116,6 @@ try {
         }
     }
 
-    $cachePath = Join-Path $destPath "mods\\ModpackUpdater\\version_cache.json"
-    $cacheDir = Split-Path $cachePath -Parent
-    if (Test-Path $cacheDir) {
-        $timestamp = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
-        $cache = @{
-            version = "zip"
-            commit = "Updated via zip"
-            date = $timestamp
-            cached_at = $timestamp
-        }
-        $cache | ConvertTo-Json -Depth 3 | Set-Content -Path $cachePath -Encoding ASCII
-    }
-
     Write-Status "Update complete. Restart the game to apply changes."
 } finally {
     if (Test-Path $tempRoot) {

@@ -95,19 +95,4 @@ for file in WSOCK32.dll README.md .gitignore .luarc.json; do
     fi
 done
 
-CACHE_PATH="$DESTINATION/mods/ModpackUpdater/version_cache.json"
-CACHE_DIR="$(dirname "$CACHE_PATH")"
-
-if [ -d "$CACHE_DIR" ]; then
-    TS="$(date "+%Y-%m-%d %H:%M:%S")"
-    cat > "$CACHE_PATH" <<EOF
-{
-  "version": "zip",
-  "commit": "Updated via zip",
-  "date": "$TS",
-  "cached_at": "$TS"
-}
-EOF
-fi
-
 echo "Update complete. Restart the game to apply changes."

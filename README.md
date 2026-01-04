@@ -107,7 +107,7 @@ Use updater scripts mentioned above, or `git stash` and `git pull` to forcibly u
 Thanks to the mod developers who made these amazing mods
 And to the PAYDAY 2 modding community for keeping the game alive.
 
-### Custom mod settings (mods/saves)
+### Custom mod settings (Payday 2/mods/saves)
 
 - VanillaHUD Plus: Health circle is turn off in favor of health bar for enemies
 - Advanced Crosshairs: TODO

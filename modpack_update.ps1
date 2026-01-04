@@ -132,6 +132,8 @@ try {
     Write-Status "Update complete. Restart the game to apply changes."
 } finally {
     if (Test-Path $tempRoot) {
-        Remove-Item -Path $tempRoot -Recurse -Force
+        # Brief delay to release file handles from Expand-Archive
+        Start-Sleep -Milliseconds 500
+        Remove-Item -Path $tempRoot -Recurse -Force -ErrorAction SilentlyContinue
     }
 }

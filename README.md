@@ -44,6 +44,18 @@ Or run it inline with curl:
 curl -L https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.ps1 | powershell -NoProfile -ExecutionPolicy Bypass -
 ```
 
+On Linux:
+
+```bash
+sh ./modpack_update.sh
+```
+
+Inline with curl:
+
+```bash
+curl -L https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.sh | sh
+```
+
 ## Mods Included
 
 [SuperBLT](https://superblt.znix.xyz/) - Required mod loader for PAYDAY 2

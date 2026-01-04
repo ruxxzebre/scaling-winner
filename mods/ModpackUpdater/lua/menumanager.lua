@@ -4,7 +4,9 @@ ModpackUpdater = ModpackUpdater or {}
 ModpackUpdater._mod_path = ModPath
 ModpackUpdater.repo_path = ModpackUpdater._mod_path .. "../../"
 ModpackUpdater.cache_file = ModpackUpdater._mod_path .. "version_cache.json"
-ModpackUpdater.script_path = ModpackUpdater.repo_path .. "modpack_update.ps1"
+ModpackUpdater.is_windows = package.config:sub(1, 1) == "\\"
+ModpackUpdater.script_name = ModpackUpdater.is_windows and "modpack_update.ps1" or "modpack_update.sh"
+ModpackUpdater.script_path = ModpackUpdater.repo_path .. ModpackUpdater.script_name
 
 -- Helper: trim whitespace
 local function trim(s)
@@ -39,7 +41,12 @@ end
 
 local function run_update_script()
 	local script = Path:Normalize(ModpackUpdater.script_path)
-	local cmd = string.format('powershell -NoProfile -ExecutionPolicy Bypass -File "%s" 2>&1', script)
+	local cmd
+	if ModpackUpdater.is_windows then
+		cmd = string.format('powershell -NoProfile -ExecutionPolicy Bypass -File "%s" 2>&1', script)
+	else
+		cmd = string.format('sh "%s" 2>&1', script)
+	end
 	local handle = io.popen(cmd)
 	if not handle then
 		return nil, "Failed to execute update script"

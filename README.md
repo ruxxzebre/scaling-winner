@@ -128,6 +128,7 @@ This repository is a collection of mods made by their respective authors. All mo
 - Remove dev files (lua bindings/dev folder) from downloaded modpack zip archive
 - Tests for update scripts
 - Add options to disable optional mods like UA Grivna and The Particle Massacre
+- Github Action that builds the modpack
 
 ## Other handy goodies:
 

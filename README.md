@@ -127,6 +127,7 @@ This repository is a collection of mods made by their respective authors. All mo
 - Update scripts should replace saves (mod configs) when Force Update option is selected in Modpack Updater menu
 - Remove dev files (lua bindings/dev folder) from downloaded modpack zip archive
 - Tests for update scripts
+- Add options to disable optional mods like UA Grivna and The Particle Massacre
 
 ## Other handy goodies:
 

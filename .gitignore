@@ -13,6 +13,8 @@ mods/ModpackUpdater/temp_*.txt
 mods/ModpackUpdater/*.bat
 mods/ModpackUpdater/version_cache.json
 !mods/saves/AdvancedCrosshair.txt
+!mods/saves/VanillaHUD_v3.json
+!mods/saves/QuickChat
 
 # Unignore assets/mod_overrides folder
 !assets/
@@ -21,3 +23,4 @@ mods/ModpackUpdater/version_cache.json
 !WSOCK32.dll
 !README.md
 !.gitignore
+!.luarc.json

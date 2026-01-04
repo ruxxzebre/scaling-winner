@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "workspace.library": [
+    "./dev/vendors/luajit-complete",
+    "./mods/base",
+    "./mods/BeardLib"
+  ],
+  "runtime.version": "Lua 5.3",
+  "hint.enable": false
+}

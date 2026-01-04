@@ -17,7 +17,23 @@ You're good!
 
 ### Quick Installation
 
-Execute following commands via terminal in Payday 2 folder
+Run in terminal from your PAYDAY 2 folder:
+
+**Windows (PowerShell):**
+
+```powershell
+iwr -Uri "https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.ps1" -UseBasicParsing | iex
+```
+
+**Linux (Proton):**
+
+```bash
+wget -qO- https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.sh | sh
+```
+
+### Manual Installation
+
+Download [latest modpack archive](https://github.com/ruxxzebre/scaling-winner/archive/refs/heads/main.zip) and run the updater script from your PAYDAY 2 folder:
 
 Windows:
 
@@ -25,43 +41,13 @@ Windows:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\modpack_update.ps1
 ```
 
-Linux (Proton):
-
-```bash
-curl -L https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.sh | sh
-```
-
-### Option 1: Use updater scripts
-
-Running the script inline with curl:
-
-```powershell
-curl -L https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.ps1 | powershell -NoProfile -ExecutionPolicy Bypass -
-```
-
-Or download [latest modpack archive](https://github.com/ruxxzebre/scaling-winner/archive/refs/heads/main.zip)
-and run the updater script from your PAYDAY 2 folder:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\modpack_update.ps1
-```
-
-On Linux:
-
-Inline with curl:
-
-```bash
-curl -L https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.sh | sh
-```
-
-Or download [latest modpack archive](https://github.com/ruxxzebre/scaling-winner/archive/refs/heads/main.zip)
-And run the updater script from your PAYDAY 2 folder:
+Linux:
 
 ```bash
 sh ./modpack_update.sh
 ```
 
-### Option 2: Clone and copy
+### Clone and Copy
 
 ```bash
 git clone https://github.com/ruxxzebre/scaling-winner.git
@@ -70,7 +56,7 @@ git clone https://github.com/ruxxzebre/scaling-winner.git
 
 ### Updating
 
-Use updater scripts mentioned above, or `git stash` and `git pull` to forcibly update via git in case of Option 2.
+Re-run the Quick Installation commands above, or use `git stash && git pull` if you cloned the repo.
 
 ## Mods Included
 
@@ -80,7 +66,7 @@ Use updater scripts mentioned above, or `git stash` and `git pull` to forcibly u
 
 | Mod                            | Description                                        | Repository                                       | Author        |
 | ------------------------------ | -------------------------------------------------- | ------------------------------------------------ | ------------- |
-| Modpack Updater                | TODO                                               | [ModWorkshop](todo)                              | TODO          |
+| Modpack Updater                | In-game menu to update modpack from GitHub         | mods/ModpackUpdater                              | @ruxxzebre    |
 | Any Day Any Heist              | Play any heist on any day, skip day requirements   | [ModWorkshop](https://modworkshop.net/mod/43232) | @Hacker_lyx   |
 | Borderless Windowed Updated    | Run the game in borderless windowed mode           | [ModWorkshop](https://modworkshop.net/mod/27683) | @Shatyuka     |
 | Dynamic Weapon Animations      | Adds realistic weapon sway and movement animations | [ModWorkshop](https://modworkshop.net/mod/45913) | @Roko         |
@@ -93,8 +79,8 @@ Use updater scripts mentioned above, or `git stash` and `git pull` to forcibly u
 | The Fixes                      | Community-driven collection of bug fixes           | [ModWorkshop](https://modworkshop.net/mod/23732) | @Dom          |
 | Ultrawide Fix                  | Fixes UI scaling issues for ultrawide monitors     | [ModWorkshop](https://modworkshop.net/mod/32486) | @powware      |
 | VanillaHUD Plus                | Enhanced vanilla HUD with additional features      | [ModWorkshop](https://modworkshop.net/mod/43232) | @test1        |
-| Stop crime spree crash on join | TODO                                               | [ModWorkshop](todo)                              | TODO          |
-| Math Helper Updated 2.0        | TODO                                               | [ModWorkshop](todo)                              | TODO          |
+| Stop crime spree crash on join | Fixes crashes on joining high crime spree lobbies  | [ModWorkshop](https://modworkshop.net/mod/21026) | @<Pipemax32>  |
+| Math Helper Updated            | Helps in Rats and Cookoff jobs                     | [ModWorkshop](https://modworkshop.net/mod/25950) | @Offyerrocker |
 
 ### Override Mods (`assets/mod_overrides/`)
 

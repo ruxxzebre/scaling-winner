@@ -1,4 +1,4 @@
-pre-commit:
+pre-push:
   jobs:
     - name: generate version cache
       run: node scripts/generate-version-cache.js

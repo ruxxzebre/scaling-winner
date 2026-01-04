@@ -1,0 +1,17 @@
+{
+  "name": "PAYDAY 2 Modpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate-cache": "node scripts/generate-version-cache.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "lefthook": "^2.0.13"
+  }
+}

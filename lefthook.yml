@@ -1,0 +1,5 @@
+pre-commit:
+  jobs:
+    - name: generate version cache
+      script: scripts/generate-version-cache.js
+      runner: node

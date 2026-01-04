@@ -11,7 +11,7 @@ mods/downloads/
 mods/saves/*
 mods/ModpackUpdater/temp_*.txt
 mods/ModpackUpdater/*.bat
-mods/ModpackUpdater/version_cache.json
+!mods/ModpackUpdater/version_cache.json
 !mods/saves/AdvancedCrosshair.txt
 !mods/saves/VanillaHUD_v3.json
 !mods/saves/QuickChat
@@ -26,3 +26,7 @@ mods/ModpackUpdater/version_cache.json
 !.luarc.json
 !modpack_update.ps1
 !modpack_update.sh
+!package.json
+!lefthook.yml
+!scripts/
+!scripts/**

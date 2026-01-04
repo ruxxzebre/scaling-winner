@@ -24,8 +24,15 @@ const cache = {
 
 const cachePath = path.join(__dirname, "..", "mods", "ModpackUpdater", "version_cache.json");
 fs.mkdirSync(path.dirname(cachePath), { recursive: true });
-fs.writeFileSync(cachePath, JSON.stringify(cache, null, 2) + "\n");
 
-execSync("git add mods/ModpackUpdater/version_cache.json");
+const oldContent = fs.existsSync(cachePath) ? fs.readFileSync(cachePath, "utf8") : "";
+const newContent = JSON.stringify(cache, null, 2) + "\n";
 
-console.log("Generated version_cache.json:", cache.version);
+if (oldContent !== newContent) {
+  fs.writeFileSync(cachePath, newContent);
+  execSync("git add mods/ModpackUpdater/version_cache.json");
+  execSync('git commit -m "update version_cache.json"');
+  console.log("Created commit with version_cache.json:", cache.version);
+} else {
+  console.log("version_cache.json unchanged, skipping commit");
+}

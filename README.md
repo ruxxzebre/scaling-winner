@@ -4,7 +4,12 @@ A curated collection of mods for PAYDAY 2.
 
 ## Prerequisites
 
-- [SuperBLT](https://superblt.znix.xyz/) - Required mod loader for PAYDAY 2
+- `-skip_intro` flag in `Launch Options` (optional)
+
+### Linux
+
+- In the `Compatibility tab` in the `game properties` make sure to select `Proton Experimental`
+- Add these `Launch options` in the `General tab` in the `Properties` of the game: `WINEDLLOVERRIDES="wsock32=n,b" %command%`
 
 ## Installation
 
@@ -27,12 +32,21 @@ git clone https://github.com/ruxxzebre/scaling-winner.git
 
 ### Updating
 
-```bash
-cd "C:\Program Files (x86)\Steam\steamapps\common\PAYDAY 2"
-git pull
+Run the updater script from your PAYDAY 2 folder:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\modpack_update.ps1
+```
+
+Or run it inline with curl:
+
+```powershell
+curl -L https://raw.githubusercontent.com/ruxxzebre/scaling-winner/main/modpack_update.ps1 | powershell -NoProfile -ExecutionPolicy Bypass -
 ```
 
 ## Mods Included
+
+[SuperBLT](https://superblt.znix.xyz/) - Required mod loader for PAYDAY 2
 
 ### BLT Mods (`mods/`)
 
@@ -53,10 +67,11 @@ git pull
 
 ### Override Mods (`assets/mod_overrides/`)
 
-| Mod                   | Description                              | Source                                           | Author   |
-| --------------------- | ---------------------------------------- | ------------------------------------------------ | -------- |
-| Hotline Miami Menu    | Hotline Miami themed main menu and music | [ModWorkshop](https://modworkshop.net/mod/27294) | @Eightan |
-| The Particle Massacre | Improved particles all across the board  | [ModWorkshop](https://modworkshop.net/mod/37435) | @ZLBBR   |
+| Mod                   | Description                              | Source                                                 | Author          |
+| --------------------- | ---------------------------------------- | ------------------------------------------------------ | --------------- |
+| Hotline Miami Menu    | Hotline Miami themed main menu and music | [ModWorkshop](https://modworkshop.net/mod/27294)       | @Eightan        |
+| The Particle Massacre | Improved particles all across the board  | [ModWorkshop](https://modworkshop.net/mod/37435)       | @ZLBBR          |
+| UA Grivna             | Replace USD bills with UAH               | [NexusMods](https://www.nexusmods.com/payday2/mods/76) | @Z3BRO/@davakim |
 
 Thanks to the mod developers who made these amazing mods
 And to the PAYDAY 2 modding community for keeping the game alive.

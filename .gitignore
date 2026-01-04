@@ -24,3 +24,4 @@ mods/ModpackUpdater/version_cache.json
 !README.md
 !.gitignore
 !.luarc.json
+!modpack_update.ps1

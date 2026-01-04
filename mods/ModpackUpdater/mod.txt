@@ -1,6 +1,6 @@
 {
 	"name" : "Modpack Updater",
-	"description" : "Adds a button to pull the latest modpack from git",
+	"description" : "Adds a button to download and replace the modpack from a zip",
 	"author" : "You",
 	"version" : "1.0.0",
 	"blt_version" : 2,

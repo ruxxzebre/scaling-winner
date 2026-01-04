@@ -4,26 +4,11 @@ ModpackUpdater = ModpackUpdater or {}
 ModpackUpdater._mod_path = ModPath
 ModpackUpdater.repo_path = ModpackUpdater._mod_path .. "../../"
 ModpackUpdater.cache_file = ModpackUpdater._mod_path .. "version_cache.json"
+ModpackUpdater.script_path = ModpackUpdater.repo_path .. "modpack_update.ps1"
 
 -- Helper: trim whitespace
 local function trim(s)
 	return s and s:match("^%s*(.-)%s*$") or ""
-end
-
--- Helper: run git command and capture output
-local function run_git(args)
-	local repo = Path:Normalize(ModpackUpdater.repo_path)
-	local cmd = string.format('cd /d "%s" && git %s 2>&1', repo, args)
-	local handle = io.popen(cmd)
-	if not handle then
-		return nil, "Failed to execute command"
-	end
-	local result = handle:read("*a")
-	local success, exit_type, code = handle:close()
-	if not success then
-		return result, string.format("Command failed (exit %s)", tostring(code or "?"))
-	end
-	return result, nil
 end
 
 -- Helper: show dialog
@@ -35,29 +20,6 @@ local function show_dialog(title, message)
 	})
 end
 
--- Helper: get current version info from git
-local function get_version_info()
-	local version = trim(run_git("rev-parse --short=4 HEAD") or "")
-	local commit = trim(run_git("log -1 --format=%s") or "")
-	local date = trim(run_git("log -1 --format=%ci") or "")
-	return {
-		version = version,
-		commit = commit,
-		date = date
-	}
-end
-
--- Helper: save version info to cache file
-local function save_cache(info)
-	local data = {
-		version = info.version,
-		commit = info.commit,
-		date = info.date,
-		cached_at = os.date("%Y-%m-%d %H:%M:%S")
-	}
-	FileIO:WriteScriptData(ModpackUpdater.cache_file, data, "json")
-end
-
 -- Helper: load version info from cache file
 local function load_cache()
 	if not FileIO:Exists(ModpackUpdater.cache_file) then
@@ -66,46 +28,67 @@ local function load_cache()
 	return FileIO:ReadScriptData(ModpackUpdater.cache_file, "json")
 end
 
+local function file_exists(path)
+	local file = io.open(path, "r")
+	if file then
+		file:close()
+		return true
+	end
+	return false
+end
+
+local function run_update_script()
+	local script = Path:Normalize(ModpackUpdater.script_path)
+	local cmd = string.format('powershell -NoProfile -ExecutionPolicy Bypass -File "%s" 2>&1', script)
+	local handle = io.popen(cmd)
+	if not handle then
+		return nil, "Failed to execute update script"
+	end
+	local result = handle:read("*a")
+	local success, exit_type, code = handle:close()
+	if not success then
+		return result, string.format("Update script failed (exit %s)", tostring(code or "?"))
+	end
+	return result, nil
+end
+
 -- Check version - shows cached version info (instant, no git)
 function MenuCallbackHandler:ModpackUpdater_CheckVersion()
 	local cache = load_cache()
 
 	if not cache then
-		show_dialog("No Version Data", "No cached version info found.\n\nClick 'Update Modpack' to fetch latest version.")
+		show_dialog("No Update Info", "No cached update info found.\n\nClick 'Update Modpack' to download the latest modpack.")
 		return
 	end
 
 	local msg = string.format(
-		"Version: %s\nCommit: %s\nDate: %s\n\nCached at: %s",
+		"Version: %s\nDetails: %s\nDate: %s\n\nLast updated: %s",
 		cache.version or "?",
 		cache.commit or "?",
 		cache.date or "?",
 		cache.cached_at or "?"
 	)
 
-	show_dialog("Modpack Version", msg)
+	show_dialog("Modpack Update Info", msg)
 end
 
--- Update modpack - runs git pull and regenerates cache
+-- Update modpack - runs the update script
 function MenuCallbackHandler:ModpackUpdater_Update()
-	local pull_result, pull_err = run_git("pull")
-
-	if pull_err then
-		show_dialog("Update Failed", "Git pull failed:\n\n" .. (pull_result or pull_err))
+	local script = Path:Normalize(ModpackUpdater.script_path)
+	if not file_exists(script) then
+		show_dialog("Update Failed", "Update script not found:\n\n" .. script)
 		return
 	end
 
-	-- Get and cache new version info
-	local info = get_version_info()
-	save_cache(info)
+	local update_result, update_err = run_update_script()
+	if update_err then
+		show_dialog("Update Failed", "Update script failed:\n\n" .. trim(update_result or update_err))
+		return
+	end
 
-	local msg = string.format(
-		"Pull Result:\n%s\n\nNew Version: %s\nCommit: %s\nDate: %s\n\nRestart game to apply changes.",
-		trim(pull_result),
-		info.version,
-		info.commit,
-		info.date
-	)
+	local output = trim(update_result or "")
+	local msg = output ~= "" and output or "Update completed."
+	msg = msg .. "\n\nRestart game to apply changes."
 
 	show_dialog("Update Complete", msg)
 end
@@ -114,7 +97,7 @@ end
 Hooks:Add("LocalizationManagerPostInit", "ModpackUpdater_Loc", function(loc)
 	loc:add_localized_strings({
 		modpack_updater_title = "Modpack Updater",
-		modpack_updater_desc = "Update or check modpack version"
+		modpack_updater_desc = "Update or check modpack info"
 	})
 end)
 
@@ -127,7 +110,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "ModpackUpdater_PopulateMenus", func
 	MenuHelper:AddButton({
 		id = "modpack_check_version",
 		title = "Check Version",
-		desc = "Show current modpack version and local changes",
+		desc = "Show last update info",
 		callback = "ModpackUpdater_CheckVersion",
 		menu_id = "modpack_updater_menu",
 		priority = 2,
@@ -137,7 +120,7 @@ Hooks:Add("MenuManagerPopulateCustomMenus", "ModpackUpdater_PopulateMenus", func
 	MenuHelper:AddButton({
 		id = "modpack_update",
 		title = "Update Modpack",
-		desc = "Pull latest changes from git repository",
+		desc = "Download and replace modpack files",
 		callback = "ModpackUpdater_Update",
 		menu_id = "modpack_updater_menu",
 		priority = 1,
